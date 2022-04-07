@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2219E03227FF1A1700C6BD26 /* tea_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2219E03027FF1A1700C6BD26 /* tea_sample.json */; };
+		2219E03327FF1A1700C6BD26 /* donation_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2219E03127FF1A1700C6BD26 /* donation_sample.json */; };
 		39595C4C27FEB80A00080515 /* healTeaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C4B27FEB80A00080515 /* healTeaApp.swift */; };
 		39595C4E27FEB80A00080515 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C4D27FEB80A00080515 /* ContentView.swift */; };
 		39595C5027FEB80B00080515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39595C4F27FEB80B00080515 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2219E03027FF1A1700C6BD26 /* tea_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tea_sample.json; sourceTree = "<group>"; };
+		2219E03127FF1A1700C6BD26 /* donation_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = donation_sample.json; sourceTree = "<group>"; };
 		39595C4827FEB80A00080515 /* healTea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healTea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39595C4B27FEB80A00080515 /* healTeaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healTeaApp.swift; sourceTree = "<group>"; };
 		39595C4D27FEB80A00080515 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +40,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2219E02F27FF1A0200C6BD26 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2219E03127FF1A1700C6BD26 /* donation_sample.json */,
+				2219E03027FF1A1700C6BD26 /* tea_sample.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		39595C3F27FEB80A00080515 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +68,7 @@
 		39595C4A27FEB80A00080515 /* healTea */ = {
 			isa = PBXGroup;
 			children = (
+				2219E02F27FF1A0200C6BD26 /* Resources */,
 				39595C4B27FEB80A00080515 /* healTeaApp.swift */,
 				39595C4D27FEB80A00080515 /* ContentView.swift */,
 				39595C4F27FEB80B00080515 /* Assets.xcassets */,
@@ -131,6 +145,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2219E03227FF1A1700C6BD26 /* tea_sample.json in Resources */,
+				2219E03327FF1A1700C6BD26 /* donation_sample.json in Resources */,
 				39595C5327FEB80B00080515 /* Preview Assets.xcassets in Resources */,
 				39595C5027FEB80B00080515 /* Assets.xcassets in Resources */,
 			);

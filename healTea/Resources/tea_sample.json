@@ -1,0 +1,28 @@
+[
+ {
+  "Id": 0,
+  "picture_code": "tea_0",
+  "name": "세작 녹차",
+  "en_name": "Sejak",
+  "category1": "녹차",
+  "category2": "세작",
+  "temperature": 70,
+  "time": 1.5,
+  "tasting_note": [“견과류”, “난 향”, “달콤한 맛”],
+  "good_for_name": {“고혈압”: “고혈압에 좋아요”, “콜레스테롤”: “콜레스테롤에 좋아요”, “당뇨병”: “당뇨병에 좋아요”},
+  "good_for_context": {“임산부”: “임산부한테 나빠요”, “불면증”: “불면증에 나빠요”}
+ },
+ {
+  "Id": 1,
+  "picture_code": "tea_1",
+  "name": "우전 녹차",
+  "en_name": "Ujeon",
+  "category1": "녹차",
+  "category2": "우전",
+  "temperature": 70,
+  "time": 1.5,
+  "tasting_note": [“견과류”, “난 향”, “부드러운 단 맛”],
+  "good_for_name": {“고혈압”: “고혈압에 좋아요”, “콜레스테롤”: “콜레스테롤에 좋아요”, “당뇨병”: “당뇨병에 좋아요”},
+  "good_for_context": {“임산부”: “임산부한테 나빠요”, “불면증”: “불면증에 나빠요”}
+ }
+]
