@@ -13,8 +13,35 @@ struct healTeaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            
+            TabView {
+                Home()
+                    .tabItem{
+                        Image(systemName:"heart.circle.fill")
+                        Text("home")
+                    }
+                                
+                
+                TeaDictionary(teaData: TeaDatas[1])
+                    .tabItem{
+                        Image(systemName:"doc.fill.badge.plus")
+                        Text("Dic")
+                    }
+                
+                Mypage()
+                    .tabItem{
+                        Image(systemName:"list.bullet.rectangle.portrait.fill")
+                        Text("My")
+                    }
+                
+                TeaDictionary(teaData: TeaDatas[0])
+                    .tabItem{
+                        Image(systemName:"person.circle")
+                        Text("Cam")
+                    }
+                
+            }
         }
     }
+    
 }
