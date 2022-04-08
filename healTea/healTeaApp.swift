@@ -34,7 +34,7 @@ struct healTeaApp: App {
                         Text("My")
                     }
                 
-                TeaDictionary(teaData: TeaDatas[0])
+                Camera()
                     .tabItem{
                         Image(systemName:"person.circle")
                         Text("Cam")
