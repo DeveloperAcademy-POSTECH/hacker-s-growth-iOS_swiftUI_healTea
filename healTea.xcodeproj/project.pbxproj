@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2219E03227FF1A1700C6BD26 /* tea_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2219E03027FF1A1700C6BD26 /* tea_sample.json */; };
 		2219E03327FF1A1700C6BD26 /* donation_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2219E03127FF1A1700C6BD26 /* donation_sample.json */; };
+		22DB8F842802A91700E7D8BF /* DonationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8F832802A91700E7D8BF /* DonationData.swift */; };
 		39595C4C27FEB80A00080515 /* healTeaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C4B27FEB80A00080515 /* healTeaApp.swift */; };
 		39595C4E27FEB80A00080515 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C4D27FEB80A00080515 /* ContentView.swift */; };
 		39595C5027FEB80B00080515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39595C4F27FEB80B00080515 /* Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		39595C5527FEB80B00080515 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C5427FEB80B00080515 /* Persistence.swift */; };
 		39595C5827FEB80B00080515 /* healTea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39595C5627FEB80B00080515 /* healTea.xcdatamodeld */; };
 		39595C8027FF203F00080515 /* TeaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C7F27FF203F00080515 /* TeaData.swift */; };
-		39595C8227FF252900080515 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8127FF252900080515 /* ModelData.swift */; };
 		39595C8427FF25AB00080515 /* TeaDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8327FF25AB00080515 /* TeaDictionary.swift */; };
 		39595C892800237800080515 /* Mypage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C882800237800080515 /* Mypage.swift */; };
 		39595C8B2800249D00080515 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8A2800249C00080515 /* Home.swift */; };
@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2219E03027FF1A1700C6BD26 /* tea_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tea_sample.json; sourceTree = "<group>"; };
 		2219E03127FF1A1700C6BD26 /* donation_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = donation_sample.json; sourceTree = "<group>"; };
+		22DB8F832802A91700E7D8BF /* DonationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationData.swift; sourceTree = "<group>"; };
 		39595C4827FEB80A00080515 /* healTea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healTea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39595C4B27FEB80A00080515 /* healTeaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healTeaApp.swift; sourceTree = "<group>"; };
 		39595C4D27FEB80A00080515 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		39595C5427FEB80B00080515 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		39595C5727FEB80B00080515 /* healTea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = healTea.xcdatamodel; sourceTree = "<group>"; };
 		39595C7F27FF203F00080515 /* TeaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaData.swift; sourceTree = "<group>"; };
-		39595C8127FF252900080515 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		39595C8327FF25AB00080515 /* TeaDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaDictionary.swift; sourceTree = "<group>"; };
 		39595C882800237800080515 /* Mypage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mypage.swift; sourceTree = "<group>"; };
 		39595C8A2800249C00080515 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				39595C7F27FF203F00080515 /* TeaData.swift */,
-				39595C8127FF252900080515 /* ModelData.swift */,
+				22DB8F832802A91700E7D8BF /* DonationData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,13 +196,13 @@
 				39595C5827FEB80B00080515 /* healTea.xcdatamodeld in Sources */,
 				39595C5527FEB80B00080515 /* Persistence.swift in Sources */,
 				39595C892800237800080515 /* Mypage.swift in Sources */,
+				22DB8F842802A91700E7D8BF /* DonationData.swift in Sources */,
 				39595C4E27FEB80A00080515 /* ContentView.swift in Sources */,
 				39595C8B2800249D00080515 /* Home.swift in Sources */,
 				39595C8027FF203F00080515 /* TeaData.swift in Sources */,
 				39595C8D2800250F00080515 /* Camera.swift in Sources */,
 				39595C8427FF25AB00080515 /* TeaDictionary.swift in Sources */,
 				39595C4C27FEB80A00080515 /* healTeaApp.swift in Sources */,
-				39595C8227FF252900080515 /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
