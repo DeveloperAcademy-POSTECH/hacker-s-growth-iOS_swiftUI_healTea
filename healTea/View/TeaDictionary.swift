@@ -19,6 +19,7 @@ import SwiftUI
 
 
 struct TeaDictionary: View {
+    var emojis = ["🐶", "🐱", "🐯", "🐮","🐭", "🐼","🐻‍❄️","🐨","🦁","🐷","🐸","🐵","🐔","🐧","🐦","🦆","🐥", "🦅", "🦉", "🦇"]
     var teaData: [TeaData]
 
     
@@ -112,15 +113,56 @@ struct TeaDictionary: View {
                     }
                 }
                 
+                Spacer()
                 
-            }
+            }.padding()
             if selectedCategory1 > 0  {
                 Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
             }
+            
+            ScrollView{
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 70))]){
+                    ForEach(emojis[0..<emojis.count], id: \.self){ emoji in
+                        CardView(content: emoji)
+                            .aspectRatio(2/3, contentMode: .fit)
+                    }
+                }
+            }
+            .foregroundColor(.green)
+            .padding(.horizontal)
+            
             Spacer()
         }
     }
 }
+
+
+
+struct CardView: View{
+    var content: String
+    @State var isFaceUp: Bool = true
+    
+    var body: some View{
+         ZStack {
+             let shape = RoundedRectangle(cornerRadius: 20)
+             if isFaceUp {
+                 shape.fill(.white)
+                 shape.strokeBorder(lineWidth: 3)
+                 Text(content).font(.title)
+             } else {
+                 RoundedRectangle(cornerRadius: 20)
+                     .fill(.red)
+                 
+             }
+             
+        }
+        
+    }
+}
+
+
+
+
 
 struct TeaDictionary_Previews: PreviewProvider {
     static var previews: some View {
