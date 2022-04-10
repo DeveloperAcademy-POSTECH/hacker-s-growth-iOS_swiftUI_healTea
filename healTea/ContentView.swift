@@ -9,9 +9,18 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+   var colors = ["빨간색", "노란색", "초록색", "파란색"]
+    @State private var selectedColor = "빨간색"
+    
     var body: some View {
-        ZStack{
-            
+        VStack {
+            Picker("원하는 색을 골라주세요", selection: $selectedColor) {
+                ForEach(colors, id: \.self) {
+                    Text($0)
+                }
+            }
+            Text("당신은 '\(selectedColor)'을 선택하였습니다.")
         }
     }
     
