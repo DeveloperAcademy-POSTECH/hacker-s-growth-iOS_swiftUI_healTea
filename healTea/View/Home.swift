@@ -20,6 +20,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Mypage()
+        Home()
     }
 }

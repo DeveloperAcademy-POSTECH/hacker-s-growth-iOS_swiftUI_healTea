@@ -22,7 +22,8 @@ struct healTeaApp: App {
                     }
                                 
                 
-                TeaDictionary(teaData: TeaDatas[1])
+                //TeaDictionary(teaData: TeaData.teaData)
+                TeaDictionary(teaData: TeaData.teaData)
                     .tabItem{
                         Image(systemName:"doc.fill.badge.plus")
                         Text("Dic")
