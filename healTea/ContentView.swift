@@ -12,7 +12,7 @@ struct ContentView: View {
                  Spacer()
                  switch viewRouter.currentPage {
                  case .home:
-                     Text("home")
+                     Carousel()
                  case .liked:
                      Text("Liked")
                  case .records:

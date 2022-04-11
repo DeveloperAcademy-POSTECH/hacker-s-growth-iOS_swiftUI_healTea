@@ -168,17 +168,10 @@ struct TeaDictionary: View {
 }
 
 
-
-
-
-
-
-
-
 struct TeaDictionary_Previews: PreviewProvider {
     static var previews: some View {
 
 //        TeaDictionary(teaData: TeaData.teaData)
-        TeaDictionary(teaData: TeaData.teaData)
+        TeaDictionary(teaData: TeaData.sampleData)
     }
 }
