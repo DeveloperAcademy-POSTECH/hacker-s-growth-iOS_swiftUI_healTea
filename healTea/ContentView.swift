@@ -1,22 +1,38 @@
-//
-//  ContentView.swift
-//  healTea
-//
-//  Created by Terry Koo on 2022/04/07.
-//
-
 import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    @State var showPopUp = false
+    @StateObject var viewRouter: ViewRouter
+    
     var body: some View {
-        ZStack{
-            
-        }
+        GeometryReader { geometry in
+             VStack {
+                 Spacer()
+                 switch viewRouter.currentPage {
+                 case .home:
+                     Text("home")
+                 case .liked:
+                     Text("Liked")
+                 case .records:
+                     Text("Records")
+                 case .user:
+                     Text("User")
+                 }
+                 Spacer()
+                 HStack {
+                     TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "homekit", tabName: "Home")
+                     TabBarIcon(viewRouter: viewRouter, assignedPage: .liked, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "heart", tabName: "liked")
+                     TabBarIcon(viewRouter: viewRouter, assignedPage: .records, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "waveform", tabName: "Records")
+                     TabBarIcon(viewRouter: viewRouter, assignedPage: .user, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "person.crop.circle", tabName: "Account")
+                 }
+                 .frame(width: geometry.size.width, height: geometry.size.height/8)
+                 .background(Color("TabBarBackground").shadow(radius: 2))
+             }
+             .edgesIgnoringSafeArea(.bottom)
+         }
     }
-    
-    
-    
 //    @Environment(\.managedObjectContext) private var viewContext
 //
 //    @FetchRequest(
@@ -114,7 +130,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            
+        ContentView(viewRouter: ViewRouter())
     }
 }

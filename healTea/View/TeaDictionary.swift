@@ -1,24 +1,19 @@
-//
-//  Dictionary.swift
-//  healTea
-//
-//  Created by Terry Koo on 2022/04/07.
-//
+
 import SwiftUI
 
 
 struct TeaDictionary: View {
-    @State var teaData: TeaData
+    let teaDatas: [TeaData]
    
     var body: some View {
         HStack {
-            Text(teaData.name)
+            Text(teaDatas[1].en_name)
         }
     }
 }
 
 struct TeaDictionary_Previews: PreviewProvider { 
     static var previews: some View {
-        TeaDictionary(teaData: TeaDatas[0])
+        TeaDictionary(teaDatas: TeaData.sampleData)
     }
 }
