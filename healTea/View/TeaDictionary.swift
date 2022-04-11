@@ -181,8 +181,6 @@ struct TeaDictionary: View {
     }
 }
 
-
-
 struct SearchBar: View {
      
      @Binding var searchText: String
@@ -203,13 +201,8 @@ struct SearchBar: View {
      }
  }
 
-
-
-
 struct TeaDictionary_Previews: PreviewProvider {
     static var previews: some View {
-
-//        TeaDictionary(teaData: TeaData.teaData)
         TeaDictionary(teaData: TeaData.sampleData)
     }
 }
