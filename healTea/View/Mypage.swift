@@ -13,6 +13,7 @@ struct Mypage: View {
    
     var body: some View {
        Text("MyPage")
+            .background(.red)
     }
 }
 
