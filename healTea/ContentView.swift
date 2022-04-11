@@ -16,7 +16,7 @@ struct ContentView: View {
                  case .liked:
                      TeaDictionary(teaData: TeaData.sampleData)
                  case .records:
-                     Text("Records")
+                     Mypage()
                  case .user:
                      Text("User")
                  }
