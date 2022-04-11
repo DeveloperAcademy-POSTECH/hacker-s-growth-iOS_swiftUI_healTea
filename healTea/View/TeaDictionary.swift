@@ -119,7 +119,7 @@ struct TeaDictionary: View {
                 Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
             }
             
-            let data = Array(1...1000).map { "목록 \($0)"}
+            let data = Array(1...20).map { "Tea \($0)"}
                 
             //화면을 그리드형식으로 꽉채워줌
             let columns = [
@@ -140,9 +140,20 @@ struct TeaDictionary: View {
                                        Image("tea_0")
                                           .resizable()
                                           .aspectRatio(contentMode: .fill)
-                                             
-                                       Text(i)
-                                           .foregroundColor(.secondary)
+                                       VStack{
+                                           HStack{
+                                               Spacer()
+                                               Text("녹차")
+                                           }
+                                           HStack{
+                                               Button(action: {}, label: {Text("+")})
+                                               Spacer()
+                                               Text(i)
+                                                   .foregroundColor(.secondary)
+                                               
+                                           }
+                                       }
+                              
                                    }
                                    .padding()
                                    
