@@ -81,6 +81,8 @@ struct TeaDictionary: View {
     
     var body: some View {
         VStack {
+            Text("[search bar]")
+      
             HStack{
                 
 //                let afterCategory1: [String] = deleteFirstValue(arr: category1)
@@ -114,7 +116,7 @@ struct TeaDictionary: View {
                 
                 Spacer()
                 
-            }.padding()
+            }.padding(.horizontal)
             if selectedCategory1 > 0  {
                 Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
             }
@@ -134,6 +136,7 @@ struct TeaDictionary: View {
                                    RoundedRectangle(cornerRadius: 20)
                                        .strokeBorder(lineWidth: 3)
                                        .foregroundColor(.green)
+                                       .shadow(color: .gray, radius: 3, x: 2, y: 2)
                                        
                                          
                                    VStack {
