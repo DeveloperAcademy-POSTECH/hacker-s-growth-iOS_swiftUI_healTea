@@ -19,7 +19,7 @@ extension Color {
     static let greencolor = Color("bg_color")
 }
 
-struct Carousel: View {
+struct mainpage: View {
     
     @State var spacing: CGFloat = 10
     @State var headspace: CGFloat = 10
@@ -106,12 +106,13 @@ struct Carousel: View {
 //                .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
                 
             }
+    }
         
 
-//struct Carousel_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Carousel()
-//            }
-//        }
+struct Carousel_Previews: PreviewProvider {
+    static var previews: some View {
+        mainpage()
+
     }
+}
 }
