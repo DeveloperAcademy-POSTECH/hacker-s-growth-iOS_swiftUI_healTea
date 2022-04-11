@@ -20,7 +20,7 @@ struct DonationData: Identifiable {
 }
 
 extension DonationData {
-    static let donationData: [DonationData] =
+    static let sampleData: [DonationData] =
     [
         DonationData(picture_code:"don_0", name:"그린피스", en_name:"Green Peace", context:"핵실험 반대와 자연보호 운동 등을 통해 지구환경 보존을 위해 힘쓰는 국제 환경보호 단체."),
         

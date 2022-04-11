@@ -10,39 +10,12 @@ import SwiftUI
 @main
 struct healTeaApp: App {
     let persistenceController = PersistenceController.shared
-
+    
+    @StateObject var viewRouter = ViewRouter()
+    
     var body: some Scene {
         WindowGroup {
-            
-            TabView {
-                Home()
-                    .tabItem{
-                        Image(systemName:"heart.circle.fill")
-                        Text("home")
-                    }
-                                
-                
-                //TeaDictionary(teaData: TeaData.teaData)
-                TeaDictionary(teaData: TeaData.teaData)
-                    .tabItem{
-                        Image(systemName:"doc.fill.badge.plus")
-                        Text("Dic")
-                    }
-                
-                Mypage()
-                    .tabItem{
-                        Image(systemName:"list.bullet.rectangle.portrait.fill")
-                        Text("My")
-                    }
-                
-                Camera()
-                    .tabItem{
-                        Image(systemName:"person.circle")
-                        Text("Cam")
-                    }
-                
-            }
+            ContentView(viewRouter: viewRouter)
         }
     }
-    
 }
