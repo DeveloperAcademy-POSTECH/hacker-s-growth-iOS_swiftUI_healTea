@@ -10,9 +10,6 @@
 		2219E03227FF1A1700C6BD26 /* tea_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2219E03027FF1A1700C6BD26 /* tea_sample.json */; };
 		2219E03327FF1A1700C6BD26 /* donation_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2219E03127FF1A1700C6BD26 /* donation_sample.json */; };
 		22DB8F842802A91700E7D8BF /* DonationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8F832802A91700E7D8BF /* DonationData.swift */; };
-		22DB8F862803E5CC00E7D8BF /* TabBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8F852803E5CC00E7D8BF /* TabBarIcon.swift */; };
-		22DB8F882803E7DE00E7D8BF /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8F872803E7DE00E7D8BF /* ViewRouter.swift */; };
-		22DB8F8B2803F78900E7D8BF /* BarcodeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8F8A2803F78900E7D8BF /* BarcodeMenu.swift */; };
 		22DB8F8D2804087200E7D8BF /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8F8C2804087200E7D8BF /* Carousel.swift */; };
 		22ED32232804095C00E61916 /* ACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED321E2804095C00E61916 /* ACarousel.swift */; };
 		22ED322B28040B8800E61916 /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = 22ED322A28040B8800E61916 /* ACarousel */; };
@@ -39,9 +36,6 @@
 		2219E03027FF1A1700C6BD26 /* tea_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tea_sample.json; sourceTree = "<group>"; };
 		2219E03127FF1A1700C6BD26 /* donation_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = donation_sample.json; sourceTree = "<group>"; };
 		22DB8F832802A91700E7D8BF /* DonationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationData.swift; sourceTree = "<group>"; };
-		22DB8F852803E5CC00E7D8BF /* TabBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIcon.swift; sourceTree = "<group>"; };
-		22DB8F872803E7DE00E7D8BF /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
-		22DB8F8A2803F78900E7D8BF /* BarcodeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeMenu.swift; sourceTree = "<group>"; };
 		22DB8F8C2804087200E7D8BF /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		22ED321E2804095C00E61916 /* ACarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarousel.swift; sourceTree = "<group>"; };
 		22ED322C28040D9400E61916 /* AppLifeCycleModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifeCycleModifier.swift; sourceTree = "<group>"; };
@@ -154,10 +148,7 @@
 				39595C882800237800080515 /* Mypage.swift */,
 				39595C8A2800249C00080515 /* Home.swift */,
 				39595C8C2800250F00080515 /* Camera.swift */,
-				22DB8F852803E5CC00E7D8BF /* TabBarIcon.swift */,
 				EE8810DA2803FB02002380FB /* Barchart.swift */,
-				22DB8F872803E7DE00E7D8BF /* ViewRouter.swift */,
-				22DB8F8A2803F78900E7D8BF /* BarcodeMenu.swift */,
 				22DB8F8C2804087200E7D8BF /* Carousel.swift */,
 				5181671628041C89003D873E /* Search_Menu.swift */,
 			);
@@ -248,9 +239,6 @@
 				22ED323228040D9400E61916 /* View+ReceiveTimer.swift in Sources */,
 				39595C5527FEB80B00080515 /* Persistence.swift in Sources */,
 				39595C892800237800080515 /* Mypage.swift in Sources */,
-				5181671728041C89003D873E /* Search_Menu.swift in Sources */,
-				22DB8F882803E7DE00E7D8BF /* ViewRouter.swift in Sources */,
-				22DB8F8B2803F78900E7D8BF /* BarcodeMenu.swift in Sources */,
 				22ED323028040D9400E61916 /* AppLifeCycleModifier.swift in Sources */,
 				22DB8F842802A91700E7D8BF /* DonationData.swift in Sources */,
 				22ED323328040D9400E61916 /* ACarouselAutoScroll.swift in Sources */,
@@ -262,7 +250,6 @@
 				39595C8427FF25AB00080515 /* TeaDictionary.swift in Sources */,
 				22DB8F8D2804087200E7D8BF /* Carousel.swift in Sources */,
 				39595C4C27FEB80A00080515 /* healTeaApp.swift in Sources */,
-				22DB8F862803E5CC00E7D8BF /* TabBarIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
