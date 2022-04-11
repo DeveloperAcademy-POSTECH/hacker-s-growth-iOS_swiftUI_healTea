@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Mypage: View {
+    
     var body: some View {
        
         VStack{
@@ -33,23 +34,43 @@ struct Mypage: View {
             
             HStack{
                VStack{
-                   Image("Mypage_Image1")
-                    .padding(.trailing)
+                   Button {
+                       // 누르면 화면 이동
+                   } label: {
+                       Image("Mypage_Image1")
+                   }
                    Text("선호도조사")
-                       .padding(.trailing)
+                       
+                      
                    
                }
+               .padding(.trailing)
                 VStack{
-                    Image("Mypage_Image2")
-                        .padding(.horizontal)
+                    Button {
+                        // 누르면 화면 이동
+                    } label: {
+                        Image("Mypage_Image2")
+                    }
+
+//                    Image("Mypage_Image2")
+//                        .padding(.horizontal)
+//                        .onTapGesture {
+//                            TeaDictionary(teaData: TeaData.sampleData)
+//                        }
                     Text("내 정보")
                 }
+                .padding(.horizontal)
                 VStack{
-                    Image("Mypage_Image3")
-                        .padding(.leading)
+                    Button {
+                        // 누르면 화면 이동
+                    } label: {
+                        Image("Mypage_Image3")
+                    }
                     Text("기부처")
-                        .padding(.leading)
+                        
+                        
                 }
+                .padding(.leading)
             }
             Spacer()
         }
