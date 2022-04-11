@@ -14,7 +14,7 @@ struct Camera: View {
     
    
     var body: some View {
-       Text("Home")
+       Text("Camera")
     }
 }
 
