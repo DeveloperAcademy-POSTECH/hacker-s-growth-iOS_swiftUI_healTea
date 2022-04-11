@@ -11,11 +11,9 @@ import SwiftUI
 struct healTeaApp: App {
     let persistenceController = PersistenceController.shared
     
-    @StateObject var viewRouter = ViewRouter()
-    
     var body: some Scene {
         WindowGroup {
-            ContentView(viewRouter: viewRouter)
+            ContentView()
         }
     }
 }
