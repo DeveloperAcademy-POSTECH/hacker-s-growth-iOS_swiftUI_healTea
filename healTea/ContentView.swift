@@ -14,7 +14,7 @@ struct ContentView: View {
                  case .home:
                      Text("home")
                  case .liked:
-                     Text("Liked")
+                     TeaDictionary(teaData: TeaData.sampleData)
                  case .records:
                      Text("Records")
                  case .user:
