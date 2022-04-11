@@ -20,6 +20,7 @@ import SwiftUI
 
 struct TeaDictionary: View {
     var emojis = ["🐶", "🐱", "🐯", "🐮","🐭", "🐼","🐻‍❄️","🐨","🦁","🐷","🐸","🐵","🐔","🐧","🐦","🦆","🐥", "🦅", "🦉", "🦇"]
+    
     var teaData: [TeaData]
 
     
@@ -74,7 +75,6 @@ struct TeaDictionary: View {
 //    }
     
 
-    
     @State var selectedCategory1 = -1
     @State var selectedCategory2 = 0
     @State var temp = 0
@@ -106,7 +106,6 @@ struct TeaDictionary: View {
                     }
                 } else {
                    
-                    
                     Picker(selection: $temp, label: Text("없음")) {
                         Text("중분류")
 
@@ -120,17 +119,39 @@ struct TeaDictionary: View {
                 Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
             }
             
-            ScrollView{
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 70))]){
-                    ForEach(emojis[0..<emojis.count], id: \.self){ emoji in
-                        CardView(content: emoji)
-                            .aspectRatio(2/3, contentMode: .fit)
-                    }
-                }
-            }
-            .foregroundColor(.green)
-            .padding(.horizontal)
+            let data = Array(1...1000).map { "목록 \($0)"}
+                
+            //화면을 그리드형식으로 꽉채워줌
+            let columns = [
+                GridItem(.adaptive(minimum: 130))
+            ]
             
+            ScrollView {
+                       LazyVGrid(columns: columns,  spacing: 20) {
+                           ForEach(data, id: \.self) {i in
+                            //VStack으로 도형추가
+                               ZStack{
+                                   RoundedRectangle(cornerRadius: 20)
+                                       .strokeBorder(lineWidth: 3)
+                                       .foregroundColor(.green)
+                                       
+                                         
+                                   VStack {
+                                       Image("tea_0")
+                                          .resizable()
+                                          .aspectRatio(contentMode: .fill)
+                                             
+                                       Text(i)
+                                           .foregroundColor(.secondary)
+                                   }
+                                   .padding()
+                                   
+                               }
+                           }
+                       }
+                       .padding(.horizontal)
+                   }
+
             Spacer()
         }
     }
@@ -138,27 +159,7 @@ struct TeaDictionary: View {
 
 
 
-struct CardView: View{
-    var content: String
-    @State var isFaceUp: Bool = true
-    
-    var body: some View{
-         ZStack {
-             let shape = RoundedRectangle(cornerRadius: 20)
-             if isFaceUp {
-                 shape.fill(.white)
-                 shape.strokeBorder(lineWidth: 3)
-                 Text(content).font(.title)
-             } else {
-                 RoundedRectangle(cornerRadius: 20)
-                     .fill(.red)
-                 
-             }
-             
-        }
-        
-    }
-}
+
 
 
 
