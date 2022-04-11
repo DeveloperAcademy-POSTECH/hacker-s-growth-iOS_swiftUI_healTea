@@ -136,6 +136,7 @@ struct TeaDictionary: View {
                                    RoundedRectangle(cornerRadius: 20)
                                        .strokeBorder(lineWidth: 3)
                                        .foregroundColor(.green)
+                                       .shadow(color: .gray, radius: 3, x: 2, y: 2)
                                        
                                          
                                    VStack {
