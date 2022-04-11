@@ -19,7 +19,6 @@ import SwiftUI
 
 
 struct TeaDictionary: View {
-    var emojis = ["🐶", "🐱", "🐯", "🐮","🐭", "🐼","🐻‍❄️","🐨","🦁","🐷","🐸","🐵","🐔","🐧","🐦","🦆","🐥", "🦅", "🦉", "🦇"]
     
     var teaData: [TeaData]
 
@@ -74,7 +73,7 @@ struct TeaDictionary: View {
 //        deleteFirstValue(arr: category1)
 //    }
     
-
+    
     @State var selectedCategory1 = -1
     @State var selectedCategory2 = 0
     @State var temp = 0
@@ -85,12 +84,17 @@ struct TeaDictionary: View {
       
             HStack{
                 
-//                let afterCategory1: [String] = deleteFirstValue(arr: category1)
-                Picker("대분류",selection: $selectedCategory1) {
-                    ForEach(0 ..< category1.count, id: \.self) { index in
-                        Text(self.category1[index])
+                VStack{
+                    Picker("대분류",selection: $selectedCategory1) {
+                        ForEach(0 ..< category1.count, id: \.self) { index in
+                                Text(self.category1[index])
+                        }
                     }
+
                 }
+             //   .background(.green)
+        
+            
                 
                 if selectedCategory1 > 0 {
                     
@@ -116,7 +120,10 @@ struct TeaDictionary: View {
                 
                 Spacer()
                 
-            }.padding(.horizontal)
+            }
+            .padding(.horizontal)
+            
+            
             if selectedCategory1 > 0  {
                 Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
             }
@@ -161,7 +168,7 @@ struct TeaDictionary: View {
                                    .padding()
                                    
                                }
-                           }
+                           } // ForEach
                        }
                        .padding(.horizontal)
                    }
