@@ -28,6 +28,7 @@
 		39595C892800237800080515 /* Mypage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C882800237800080515 /* Mypage.swift */; };
 		39595C8B2800249D00080515 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8A2800249C00080515 /* Home.swift */; };
 		39595C8D2800250F00080515 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8C2800250F00080515 /* Camera.swift */; };
+		5181671728041C89003D873E /* Search_Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181671628041C89003D873E /* Search_Menu.swift */; };
 		EE8810DB2803FB02002380FB /* Barchart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8810DA2803FB02002380FB /* Barchart.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		39595C882800237800080515 /* Mypage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mypage.swift; sourceTree = "<group>"; };
 		39595C8A2800249C00080515 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		39595C8C2800250F00080515 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		5181671628041C89003D873E /* Search_Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search_Menu.swift; sourceTree = "<group>"; };
 		EE8810DA2803FB02002380FB /* Barchart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barchart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				39595C8C2800250F00080515 /* Camera.swift */,
 				EE8810DA2803FB02002380FB /* Barchart.swift */,
 				22DB8F8C2804087200E7D8BF /* Carousel.swift */,
+				5181671628041C89003D873E /* Search_Menu.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
