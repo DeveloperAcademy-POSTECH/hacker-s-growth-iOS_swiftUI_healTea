@@ -12,9 +12,15 @@ import SwiftUI
 //    }
 //}
 
-
-struct TeaDictionary: View {
  
+struct TeaDictionary: View {
+//    typealias btc = (Bool, UUID)
+//
+//    @State var up: btc = (false, UUID())
+    
+    //sheet 임시
+    @State private var showingSheet = false
+    
     
     var teaData: [TeaData]
 
@@ -39,8 +45,8 @@ struct TeaDictionary: View {
                 }
                 middle[main[i]] = Array(Set(middle[main[i]]!).sorted(by: <))
                 
-            }
-        }
+            } // inner for
+        } // outter for
         
         return middle
     }
@@ -51,7 +57,7 @@ struct TeaDictionary: View {
             category.append(data[i].category1)
         }
         category = (Array(Set(category))).sorted(by: <)
-        category.insert("대분류", at: 0)
+        category.insert("대분류 ▼", at: 0)
         return category
     }
     
@@ -84,147 +90,147 @@ struct TeaDictionary: View {
             }
       
             HStack{
-                
                 VStack{
-                    Picker("대분류",selection: $selectedCategory1) {
-                        ForEach(0 ..< category1.count, id: \.self) { index in
-                            Text(self.category1[index])
-                        }
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 13)
+                            .fill(Color(hue: 0.179, saturation: 0.031, brightness: 0.92))
+                            .frame(width: 70, height: 23, alignment: .center )
+                            Picker("대분류",selection: $selectedCategory1) {
+                                ForEach(0 ..< category1.count, id: \.self) { index in
+                                    Text(self.category1[index])
+                                        
+                                }
+                            }
                     }
+                } // VStack
+                
 
-                }
-                
-                
-                
-        
-            
                 
                 if selectedCategory1 > 0 {
-                    
 //                    Picker("대분류",selection: $selectedCategory1) {
 //                        ForEach(0 ..< afterCategory1.count, id: \.self) { index in
 //                            Text(afterCategory1[index])
 //                        }
 //                    }
-                    
                     let middleCategory: [String] = category2[category1[selectedCategory1]]!
-                    Picker(selection: $selectedCategory2, label: Text("중분류")) {
-                        ForEach(0 ..< middleCategory.count, id: \.self) { index in
-                            Text(middleCategory[index])
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 13)
+                            .fill(Color(hue: 0.179, saturation: 0.031, brightness: 0.92))
+                            .frame(width: 70, height: 23, alignment: .center )
+                        Picker(selection: $selectedCategory2, label: Text("중분류")) {
+                            ForEach(0 ..< middleCategory.count, id: \.self) { index in
+                                Text(middleCategory[index])
+                            }
                         }
                     }
                 } else {
-                   
-                    Picker(selection: $temp, label: Text("없음")) {
-                        Text("중분류")
-
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 13)
+                            .fill(Color(hue: 0.179, saturation: 0.031, brightness: 0.92))
+                            .frame(width: 70, height: 23, alignment: .center )
+                        Picker(selection: $temp, label: Text("없음")) {
+                            Text("중분류 ▼")
+                        }
                     }
                 }
-                
                 Spacer()
-                
-            }
+            } // HStack
             .padding(.horizontal)
         
             
-            
-            if selectedCategory1 > 0  {
-                Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
-                
-                
-            }
+//            if selectedCategory1 > 0  {
+//                Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
+//            }
             
             
-            
-                
-            //화면을 그리드형식으로 꽉채워줌
             let columns = [
                 GridItem(.adaptive(minimum: 130))
             ]
             
+            // 무언가가 선택됨
             if selectedCategory1 > 0{
                 let result = teaData.filter{ (data: TeaData) -> Bool in
                     return data.category1 == category1[selectedCategory1] && data.category2 == category2[category1[selectedCategory1]]![selectedCategory2]
                 }
                 ScrollView {
-                           LazyVGrid(columns: columns,  spacing: 20) {
-                               ForEach(result, id: \.self.id) {i in
-                                //VStack으로 도형추가
-                                   ZStack{
-                                       RoundedRectangle(cornerRadius: 20)
-                                           .fill(.white)
-                                           .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                           
-                                             
-                                       VStack {
-                                           Image(i.picture_code)
-                                              .resizable()
-                                              .aspectRatio(contentMode: .fill)
-                                           VStack{
-                                               HStack{
-                                                   Spacer()
-                                                   Text(i.name)
-                                               }
-                                               HStack{
-                                                   Button(action: {}, label: {Text("+")})
-                                                   Spacer()
-                                                   Text("Tea")
-                                                       .foregroundColor(.secondary)
-                                                   
-                                               }
-                                           }
-                                  
+                   LazyVGrid(columns: columns,  spacing: 20) {
+                       ForEach(result, id: \.self.id) {i in
+                        //VStack으로 도형추가
+                           ZStack{
+                               RoundedRectangle(cornerRadius: 20)
+                                   .fill(.white)
+                                   .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                               VStack {
+                                   Image(i.picture_code)
+                                      .resizable()
+                                      .aspectRatio(contentMode: .fill)
+                                   VStack{
+                                       HStack{
+                                           Spacer()
+                                           Text(i.name)
                                        }
-                                       .padding()
-                                       
-                                   }
-                               } // ForEach
-                           }
-                           .padding(.horizontal)
-                }
-            }else{
-                ScrollView {
-                           LazyVGrid(columns: columns,  spacing: 20) {
-                               ForEach(teaData, id: \.self.id) {i in
-                                //VStack으로 도형추가
-                                   ZStack{
-                                       RoundedRectangle(cornerRadius: 20)
-                                           .fill(.white)
-                                           .shadow(color: .gray, radius: 3, x: 4, y: 4)
-                                           
-                                             
-                                       VStack {
-                                           Image(i.picture_code)
-                                              .resizable()
-                                              .aspectRatio(contentMode: .fill)
-                                           VStack{
-                                               HStack{
-                                                   Spacer()
-                                                   Text(i.name)
-                                               }
-                                               HStack{
-                                                   Button(action: {}, label: {Text("+")})
-                                                   Spacer()
-                                                   Text("Tea")
-                                                       .foregroundColor(.secondary)
-                                                   
-                                               }
-                                           }
-                                  
+                                       HStack{
+                                           Button(action: {
+                                               self.showingSheet.toggle()
+                                           }, label: {Text("+")})
+                                           .sheet(isPresented: $showingSheet) {
+                                               Detail(id: i.id)
+                                           } // button
+                                           Spacer()
+                                           Text("Tea")
+                                               .foregroundColor(.secondary)
                                        }
-                                       .padding()
-                                       
                                    }
-                               } // ForEach
-                           }
-                           .padding(.horizontal)
-                }
-            }
-
+                               }
+                               .padding()
+                           } // ZStack
+                       } // ForEach
+                   } // LazyVGrid
+                   .padding(.horizontal)
+                } // ScrollView
+            }else{ // 아무거도 선택되지 않음
+                    ScrollView {
+                               LazyVGrid(columns: columns,  spacing: 20) {
+                                   ForEach(teaData, id: \.self.id) {i in
+                                    //VStack으로 도형추가
+                                       ZStack{
+                                           RoundedRectangle(cornerRadius: 20)
+                                               .fill(.white)
+                                               .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                           VStack {
+                                               Image(i.picture_code)
+                                                  .resizable()
+                                                  .aspectRatio(contentMode: .fill)
+                                               VStack{
+                                                   HStack{
+                                                       Spacer()
+                                                       Text(i.name)
+                                                   } // HStack
+                                                   HStack{
+                                                       Button(action: {
+                                                           self.showingSheet.toggle()
+                                                       }, label: {Text("+")})
+                                                       .sheet(isPresented: $showingSheet) {
+                                                          
+                                                           Detail(id: i.id)
+                                                       }// button
+                                                       Spacer()
+                                                       Text("Tea")
+                                                           .foregroundColor(.secondary)
+                                                   } // HStack
+                                               } // VStack
+                                           } // VStack
+                                           .padding()
+                                       }
+                                   } // ForEach
+                               } // LazyVGrid
+                               .padding(.horizontal)
+                    } // ScrollView
+            } // else
             Spacer()
         }
-    }
-}
+    } // body
+} // struct
 
 struct SearchBar: View {
      
@@ -243,12 +249,77 @@ struct SearchBar: View {
              Image(systemName: "magnifyingglass")
                  .padding(.trailing)
          }.padding(.horizontal)
-     }
- }
+         
+     } 
+} // SearchBar
+
+
+
+struct Detail: View {
+    var id: UUID
+    var teas: [TeaData]{
+        TeaData.sampleData.filter{ (t: TeaData) -> Bool in
+            return self.id == t.id
+        }
+    }
+    
+    var body: some View {
+        VStack{
+            HStack{
+                VStack{
+                    Text("자료 개수\(teas.count)")
+                    Text(teas[0].name)
+                        .font(.title)
+                    Text(teas[0].en_name)
+                    Text("")
+                    Text("\(teas[0].name)의 효능")
+                }// 차이름, 효능 타이틀
+                VStack{
+                    Image(teas[0].picture_code)
+                        .resizable()
+                        .frame(width: 200 , height: 200)
+                } // 차사진
+            }
+            
+            HStack{
+                ForEach(teas[0].good_name, id: \.self){ t in
+                    Text(t)
+                }
+            } // 효능
+            
+            HStack{
+                Text("")
+                Text("테이스팅 노트")
+                    .font(.title)
+            } // 테이스팅 노트
+            HStack{
+                ForEach(teas[0].tasting_note, id: \.self){ t in
+                    Text(t)
+                }
+            } // 테이스팅 노트 이미지
+            VStack{
+                Text("이런사람들 한테 좋아요")
+                    .font(.title)
+                ForEach(teas[0].good_context, id: \.self){ t in
+                    Text(t)
+                }
+                Text("이런사람들 한테 나빠요")
+                    .font(.title)
+                ForEach(teas[0].bad_context, id: \.self){ t in
+                    Text(t)
+                }
+            }
+        }
+  }
+}
+
+
+                                                     
 
 struct TeaDictionary_Previews: PreviewProvider {
     static var previews: some View {
         TeaDictionary(teaData: TeaData.sampleData)
+        Detail(id: TeaData.sampleData[0].id)
     }
 }
 
