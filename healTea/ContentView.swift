@@ -23,7 +23,7 @@ struct ContentView: View {
                     Image(systemName: "person")
                     Text("My")
                 }
-            Camera()
+            Reward()
                 .tabItem {
                     Image(systemName: "barcode.viewfinder")
                     Text("Barcode")

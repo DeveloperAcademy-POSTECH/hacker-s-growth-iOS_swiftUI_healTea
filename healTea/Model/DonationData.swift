@@ -29,4 +29,3 @@ extension DonationData {
         DonationData(picture_code:"don_2", name:"환경재단", en_name:"K-Green Foundation", context:"환경재단은 지속가능한 지구를 위해 정부·기업·시민사회와 함께하는 실천공동체입니다.")
     ]
 }
-
