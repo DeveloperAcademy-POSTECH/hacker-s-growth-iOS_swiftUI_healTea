@@ -32,46 +32,48 @@ struct Mypage: View {
             Image("bar")
                 .padding(.bottom)
             
-            HStack{
-               VStack{
-                   Button {
-                       // 누르면 화면 이동
-                   } label: {
-                       Image("Mypage_Image1")
+            
+                HStack{
+                   VStack{
+                       Button {
+                           // 누르면 화면 이동
+                       } label: {
+                           Image("Mypage_Image1")
+                       }
+                       Text("기부처")
+     
                    }
-                   Text("선호도조사")
-                       
-                      
-                   
-               }
-               .padding(.trailing)
-                VStack{
-                    Button {
-                        // 누르면 화면 이동
-                    } label: {
-                        Image("Mypage_Image2")
-                    }
+                   .padding(.trailing)
+                    VStack{
+                        Button {
+                            // 누르면 화면 이동
+                        } label: {
+                            Image("Mypage_Image2")
+                        }
 
-//                    Image("Mypage_Image2")
-//                        .padding(.horizontal)
-//                        .onTapGesture {
-//                            TeaDictionary(teaData: TeaData.sampleData)
-//                        }
-                    Text("내 정보")
-                }
-                .padding(.horizontal)
-                VStack{
-                    Button {
-                        // 누르면 화면 이동
-                    } label: {
-                        Image("Mypage_Image3")
+    //                    Image("Mypage_Image2")
+    //                        .padding(.horizontal)
+    //                        .onTapGesture {
+    //                            TeaDictionary(teaData: TeaData.sampleData)
+    //                        }
+                        Text("내 정보")
                     }
-                    Text("기부처")
-                        
-                        
+                    .padding(.horizontal)
+                    VStack{
+                        Button {
+                            // 누르면 화면 이동
+                        } label: {
+                            Image("Mypage_Image3")
+                        }
+                        Text("기부처")
+                            
+                            
+                    }
+                    .padding(.leading)
                 }
-                .padding(.leading)
-            }
+                Spacer()
+            
+            
             Spacer()
         }
         
