@@ -21,15 +21,18 @@ extension Color {
 
 struct mainpage: View {
     
+    
+    @State private var showModal = false
     @State var spacing: CGFloat = 10
     @State var headspace: CGFloat = 10
     @State var sidesScaling: CGFloat = 0.8
     @State var isWrap: Bool = false
     @State var autoScroll: Bool = false
-    @State var time: TimeInterval = 1
-    @State var currentIndex: Int = 0
+    @State var time: TimeInterval = 5
+    @State var currentIndex: Int = 5
             
     var body: some View {
+        NavigationView {
         
         VStack{
         ZStack{
@@ -38,24 +41,24 @@ struct mainpage: View {
                 .frame(width: 400)
                 .frame(height: 85)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
-                .offset(y:20)
+                .offset(y:-80)
         
 
             Image("logo")
                         .resizable()
                         .frame(width: 60, height: 60, alignment: .center)
-                        .offset(x:0, y:-30)
+                        .offset(x:0, y:-127)
    
                   
             Image("search")
                 .frame(width: 44, height: 44)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
-                .offset(x:150, y:20)
+                .offset(x:150, y:-80)
                             
    
             
             Text("Daily Menu").font(.system(size:36,weight: .bold))
-                .offset(x: 0, y:55)
+                .offset(x: 0, y:-50)
             
             .font(.system(size: 26, weight: .bold))
             .foregroundColor(.greencolor)
@@ -63,16 +66,27 @@ struct mainpage: View {
                         
  
         }
-
+            
             VStack{
                 Text("오늘 이 음료 어떠세요.").font(.system(size:24))
                     
                     .fontWeight(.light)
                     .foregroundColor(.gray)
+                    .offset(x: 0, y:-100)
                     
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-
-                Spacer().frame(height:10)
+                    Spacer().frame(height:50)
+                
+                
+                
+                            
+                
+            
+        
+                                
+                                    
+                           
+                HStack{
                 
                 ACarousel(roles,
                           id: \.self,
@@ -82,15 +96,30 @@ struct mainpage: View {
                           sidesScaling: sidesScaling,
                           isWrap: isWrap,
                           autoScroll: autoScroll ? .active(time) : .inactive) { name in
-                    Image(name)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 380)
+                          
+                    
+                  
+                    
                         
+                    Image(name)
+                        
+                        .frame(height: 380)
+                        .frame(width:280)
                         .cornerRadius(30)
-                
+                        .navigationBarTitle("")
+                        
+                    
                 }
+                
+                        
                 Spacer()
+                Spacer()
+               
+                    
+            }
+            }
+                
+
 
                 
             } // VStack
