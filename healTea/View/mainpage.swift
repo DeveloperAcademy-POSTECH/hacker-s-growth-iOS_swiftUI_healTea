@@ -13,13 +13,13 @@ import ACarousel
 //    let image: Image
 //}
 
-let roles = ["don_0", "don_1", "don_2"]
+let roles = ["b1", "b2", "b3","b4", "b5", "b6","b7", "b8", "b9","b10"]
 
 extension Color {
     static let greencolor = Color("bg_color")
 }
 
-struct Carousel: View {
+struct mainpage: View {
     
     @State var spacing: CGFloat = 10
     @State var headspace: CGFloat = 10
@@ -30,6 +30,8 @@ struct Carousel: View {
     @State var currentIndex: Int = 0
             
     var body: some View {
+        
+        
         ZStack{
             Rectangle()
                 .fill(Color.greencolor)
@@ -37,18 +39,33 @@ struct Carousel: View {
                 .frame(height: 85)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
                 .offset(y:20)
-            Circle()
-                .fill(Color.white)
-                .frame(width: 50,height:50)
-                .offset(y:-30)
+        
             
+            
+            Image("logo")
+                        .resizable()
+                        .frame(width: 60, height: 60, alignment: .center)
+                        .offset(x:0, y:-30)
+            
+            
+            
+        
+                            
+                       
             Image("search")
                 .frame(width: 44, height: 44)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
                 .offset(x:150, y:20)
+                            
+          
                 
-            Text("Daily Menu")
-                .offset(x: 0, y:45)
+           
+            
+            
+            
+            
+            Text("Daily Menu").font(.system(size:36,weight: .bold))
+                .offset(x: 0, y:55)
             
             .font(.system(size: 26, weight: .bold))
             .foregroundColor(.greencolor)
@@ -57,16 +74,17 @@ struct Carousel: View {
         }
                 
         ZStack{
-            Text("오늘 이 음료 어떠세요.")
+            Text("오늘 이 음료 어떠세요.").font(.system(size:24))
+                
                 .fontWeight(.light)
                 .foregroundColor(.gray)
-                .offset(x: 0, y: 40)
-                .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
+                
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
 
         VStack{
 
-            Spacer().frame(height: 40)
+            Spacer().frame(height:10)
             
             ACarousel(roles,
                       id: \.self,
@@ -79,20 +97,22 @@ struct Carousel: View {
                 Image(name)
                     .resizable()
                     .scaledToFill()
-                    .frame(height: 400)
+                    .frame(height: 380)
+                    
                     .cornerRadius(30)
             
-            .frame(height: 400)
+            }
             Spacer()
-                .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
+//                .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
                 
             }
-        }
-
-//struct Carousel_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Carousel()
-//            }
-//        }
     }
+        
+
+struct Carousel_Previews: PreviewProvider {
+    static var previews: some View {
+        mainpage()
+
+    }
+}
 }

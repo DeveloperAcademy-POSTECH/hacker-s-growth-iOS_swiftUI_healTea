@@ -3,35 +3,45 @@ import CoreData
 
 struct ContentView: View {
     
-    @State var showPopUp = false
-    @StateObject var viewRouter: ViewRouter
-    
     var body: some View {
-        GeometryReader { geometry in
-             VStack {
-                 Spacer()
-                 switch viewRouter.currentPage {
-                 case .home:
-                     Carousel()
-                 case .liked:
-                     TeaDictionary(teaData: TeaData.sampleData)
-                 case .records:
-                     Mypage()
-                 case .user:
-                     Text("User")
-                 }
-                 Spacer()
-                 HStack {
-                     TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "homekit", tabName: "Home")
-                     TabBarIcon(viewRouter: viewRouter, assignedPage: .liked, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "heart", tabName: "liked")
-                     TabBarIcon(viewRouter: viewRouter, assignedPage: .records, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "waveform", tabName: "Records")
-                     TabBarIcon(viewRouter: viewRouter, assignedPage: .user, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "person.crop.circle", tabName: "Account")
-                 }
-                 .frame(width: geometry.size.width, height: geometry.size.height/8)
-                 .background(Color("TabBarBackground").shadow(radius: 2))
-             }
-             .edgesIgnoringSafeArea(.bottom)
-         }
+        TabView {
+            Home()
+                .tabItem {
+                    Image(systemName: "house")
+                         .resizable()
+                         .aspectRatio(contentMode: .fit)
+                         .padding(.top, 10)
+                    Text("Home")
+                }
+            TeaDictionary(teaData: TeaData.sampleData)
+                .tabItem {
+                    Image(systemName: "leaf")
+                    Text("Tea")
+                }
+            Mypage()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("My")
+                }
+            Camera()
+                .tabItem {
+                    Image(systemName: "barcode.viewfinder")
+                    Text("Barcode")
+                }
+                .foregroundColor(Color("TabBarBackground"))
+        }
+        .padding(.top, 10)
+        .ignoresSafeArea(edges: .bottom)
+        .onAppear {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundColor = UIColor(Color.gray.opacity(0.2))
+            
+            // Use this appearance when scrolling behind the TabView:
+            UITabBar.appearance().standardAppearance = appearance
+            // Use this appearance when scrolled all the way up:
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
+        .accentColor(.green)
     }
 //    @Environment(\.managedObjectContext) private var viewContext
 //
@@ -130,6 +140,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewRouter: ViewRouter())
+        ContentView()
     }
 }
