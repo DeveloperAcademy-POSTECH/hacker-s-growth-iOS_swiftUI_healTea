@@ -5,7 +5,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            Home()
+            mainpage()
                 .tabItem {
                     Image(systemName: "house")
                          .resizable()
