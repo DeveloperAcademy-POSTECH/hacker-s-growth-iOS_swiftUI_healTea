@@ -12,9 +12,8 @@ import SwiftUI
 //    }
 //}
 
-
 struct TeaDictionary: View {
-
+ 
     
     var teaData: [TeaData]
 
@@ -74,21 +73,28 @@ struct TeaDictionary: View {
     @State var selectedCategory2 = 0
     @State var temp = 0
     
+    //search
+    @State var searchText = ""
+    
     var body: some View {
         VStack {
-            Text("[search bar]")
+            ZStack{
+                SearchBar(searchText: $searchText)
+            }
       
             HStack{
                 
                 VStack{
                     Picker("대분류",selection: $selectedCategory1) {
                         ForEach(0 ..< category1.count, id: \.self) { index in
-                                Text(self.category1[index])
+                            Text(self.category1[index])
                         }
                     }
 
                 }
-             //   .background(.green)
+                
+                
+                
         
             
                 
@@ -118,74 +124,129 @@ struct TeaDictionary: View {
                 
             }
             .padding(.horizontal)
+        
             
             
             if selectedCategory1 > 0  {
                 Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
+                
+                
             }
             
-            let data = Array(1...20).map { "Tea \($0)"}
+            
+            
                 
             //화면을 그리드형식으로 꽉채워줌
             let columns = [
                 GridItem(.adaptive(minimum: 130))
             ]
             
-            ScrollView {
-                       LazyVGrid(columns: columns,  spacing: 20) {
-                           ForEach(data, id: \.self) {i in
-                            //VStack으로 도형추가
-                               ZStack{
-                                   RoundedRectangle(cornerRadius: 20)
-                                       .strokeBorder(lineWidth: 3)
-                                       .foregroundColor(.green)
-                                       .shadow(color: .gray, radius: 3, x: 2, y: 2)
-                                       
-                                         
-                                   VStack {
-                                       Image("tea_0")
-                                          .resizable()
-                                          .aspectRatio(contentMode: .fill)
-                                       VStack{
-                                           HStack{
-                                               Spacer()
-                                               Text("녹차")
+            if selectedCategory1 > 0{
+                let result = teaData.filter{ (data: TeaData) -> Bool in
+                    return data.category1 == category1[selectedCategory1] && data.category2 == category2[category1[selectedCategory1]]![selectedCategory2]
+                }
+                ScrollView {
+                           LazyVGrid(columns: columns,  spacing: 20) {
+                               ForEach(result, id: \.self.id) {i in
+                                //VStack으로 도형추가
+                                   ZStack{
+                                       RoundedRectangle(cornerRadius: 20)
+                                           .fill(.white)
+                                           .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                           
+                                             
+                                       VStack {
+                                           Image(i.picture_code)
+                                              .resizable()
+                                              .aspectRatio(contentMode: .fill)
+                                           VStack{
+                                               HStack{
+                                                   Spacer()
+                                                   Text(i.name)
+                                               }
+                                               HStack{
+                                                   Button(action: {}, label: {Text("+")})
+                                                   Spacer()
+                                                   Text("Tea")
+                                                       .foregroundColor(.secondary)
+                                                   
+                                               }
                                            }
-                                           HStack{
-                                               Button(action: {}, label: {Text("+")})
-                                               Spacer()
-                                               Text(i)
-                                                   .foregroundColor(.secondary)
-                                               
-                                           }
+                                  
                                        }
-                              
+                                       .padding()
+                                       
                                    }
-                                   .padding()
-                                   
-                               }
-                           } // ForEach
-                       }
-                       .padding(.horizontal)
-                   }
+                               } // ForEach
+                           }
+                           .padding(.horizontal)
+                }
+            }else{
+                ScrollView {
+                           LazyVGrid(columns: columns,  spacing: 20) {
+                               ForEach(teaData, id: \.self.id) {i in
+                                //VStack으로 도형추가
+                                   ZStack{
+                                       RoundedRectangle(cornerRadius: 20)
+                                           .fill(.white)
+                                           .shadow(color: .gray, radius: 3, x: 4, y: 4)
+                                           
+                                             
+                                       VStack {
+                                           Image(i.picture_code)
+                                              .resizable()
+                                              .aspectRatio(contentMode: .fill)
+                                           VStack{
+                                               HStack{
+                                                   Spacer()
+                                                   Text(i.name)
+                                               }
+                                               HStack{
+                                                   Button(action: {}, label: {Text("+")})
+                                                   Spacer()
+                                                   Text("Tea")
+                                                       .foregroundColor(.secondary)
+                                                   
+                                               }
+                                           }
+                                  
+                                       }
+                                       .padding()
+                                       
+                                   }
+                               } // ForEach
+                           }
+                           .padding(.horizontal)
+                }
+            }
 
             Spacer()
         }
     }
 }
 
-
-
-
-
-
-
-
+struct SearchBar: View {
+     
+     @Binding var searchText: String
+     
+     var body: some View {
+         RoundedRectangle(cornerRadius: 13)
+             .foregroundColor(Color("LightGray"))
+             .frame(height: 40)
+             .padding(.horizontal)
+         
+         HStack{
+             TextField("Search ..", text: $searchText)
+                 .padding(.leading)
+             
+             Image(systemName: "magnifyingglass")
+                 .padding(.trailing)
+         }.padding(.horizontal)
+     }
+ }
 
 struct TeaDictionary_Previews: PreviewProvider {
     static var previews: some View {
-
-//        TeaDictionary(teaData: TeaData.teaData)
-        TeaDictionary(teaData: TeaData.teaData)
+        TeaDictionary(teaData: TeaData.sampleData)
     }
 }
