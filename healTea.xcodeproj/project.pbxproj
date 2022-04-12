@@ -17,6 +17,8 @@
 		22ED323128040D9400E61916 /* ACarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED322D28040D9400E61916 /* ACarouselViewModel.swift */; };
 		22ED323228040D9400E61916 /* View+ReceiveTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED322E28040D9400E61916 /* View+ReceiveTimer.swift */; };
 		22ED323328040D9400E61916 /* ACarouselAutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED322F28040D9400E61916 /* ACarouselAutoScroll.swift */; };
+		3953B0B32805CABF000B09AC /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953B0B22805CABF000B09AC /* Detail.swift */; };
+		3953B0B52805CAF3000B09AC /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953B0B42805CAF3000B09AC /* SearchBar.swift */; };
 		39595C4C27FEB80A00080515 /* healTeaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C4B27FEB80A00080515 /* healTeaApp.swift */; };
 		39595C4E27FEB80A00080515 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C4D27FEB80A00080515 /* ContentView.swift */; };
 		39595C5027FEB80B00080515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39595C4F27FEB80B00080515 /* Assets.xcassets */; };
@@ -30,9 +32,11 @@
 		39595C8D2800250F00080515 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8C2800250F00080515 /* Camera.swift */; };
 		B3A9F73B280487D400E040B6 /* searchmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9F73A280487D400E040B6 /* searchmenu.swift */; };
 		B3A9F73D28048CEB00E040B6 /* maininfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9F73C28048CEB00E040B6 /* maininfo.swift */; };
+
 		EE20F2A728058388001CA137 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2A628058388001CA137 /* DonationView.swift */; };
 		EE20F2A9280583C2001CA137 /* DonationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2A8280583C2001CA137 /* DonationList.swift */; };
 		EE20F2AB280583E1001CA137 /* DonationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2AA280583E1001CA137 /* DonationDetail.swift */; };
+
 		EE8810DB2803FB02002380FB /* Barchart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8810DA2803FB02002380FB /* Barchart.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,8 @@
 		22ED322D28040D9400E61916 /* ACarouselViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarouselViewModel.swift; sourceTree = "<group>"; };
 		22ED322E28040D9400E61916 /* View+ReceiveTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ReceiveTimer.swift"; sourceTree = "<group>"; };
 		22ED322F28040D9400E61916 /* ACarouselAutoScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarouselAutoScroll.swift; sourceTree = "<group>"; };
+		3953B0B22805CABF000B09AC /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		3953B0B42805CAF3000B09AC /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		39595C4827FEB80A00080515 /* healTea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healTea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39595C4B27FEB80A00080515 /* healTeaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healTeaApp.swift; sourceTree = "<group>"; };
 		39595C4D27FEB80A00080515 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,9 +66,11 @@
 		39595C8C2800250F00080515 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		B3A9F73A280487D400E040B6 /* searchmenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchmenu.swift; sourceTree = "<group>"; };
 		B3A9F73C28048CEB00E040B6 /* maininfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maininfo.swift; sourceTree = "<group>"; };
+
 		EE20F2A628058388001CA137 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DonationView.swift; path = healTea/DonationView.swift; sourceTree = SOURCE_ROOT; };
 		EE20F2A8280583C2001CA137 /* DonationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationList.swift; sourceTree = "<group>"; };
 		EE20F2AA280583E1001CA137 /* DonationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetail.swift; sourceTree = "<group>"; };
+
 		EE8810DA2803FB02002380FB /* Barchart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barchart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +164,8 @@
 				EE20F2A8280583C2001CA137 /* DonationList.swift */,
 				EE20F2AA280583E1001CA137 /* DonationDetail.swift */,
 				39595C8327FF25AB00080515 /* TeaDictionary.swift */,
+				3953B0B42805CAF3000B09AC /* SearchBar.swift */,
+				3953B0B22805CABF000B09AC /* Detail.swift */,
 				39595C882800237800080515 /* Mypage.swift */,
 				39595C8A2800249C00080515 /* Home.swift */,
 				39595C8C2800250F00080515 /* Camera.swift */,
@@ -261,11 +271,13 @@
 				39595C8B2800249D00080515 /* Home.swift in Sources */,
 				22ED32232804095C00E61916 /* ACarousel.swift in Sources */,
 				39595C8027FF203F00080515 /* TeaData.swift in Sources */,
+				3953B0B52805CAF3000B09AC /* SearchBar.swift in Sources */,
 				39595C8D2800250F00080515 /* Camera.swift in Sources */,
 				EE20F2A728058388001CA137 /* DonationView.swift in Sources */,
 				EE20F2A9280583C2001CA137 /* DonationList.swift in Sources */,
 				39595C8427FF25AB00080515 /* TeaDictionary.swift in Sources */,
 				22DB8F8D2804087200E7D8BF /* mainpage.swift in Sources */,
+				3953B0B32805CABF000B09AC /* Detail.swift in Sources */,
 				39595C4C27FEB80A00080515 /* healTeaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
