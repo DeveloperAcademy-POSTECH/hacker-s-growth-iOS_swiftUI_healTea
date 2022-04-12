@@ -98,7 +98,6 @@ struct Carousel: View {
                     .resizable()
                     .scaledToFill()
                     .frame(height: 380)
-                    
                     .cornerRadius(30)
             
             }

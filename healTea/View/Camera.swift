@@ -14,13 +14,16 @@ struct Camera: View {
     
    
     var body: some View {
-       Text("Camera")
+        VStack {
+            PicturePicker()
+            Mypage()
+        }
     }
 }
 
 
 struct Camera_Previews: PreviewProvider {
     static var previews: some View {
-        Mypage()
+        Camera()
     }
 }

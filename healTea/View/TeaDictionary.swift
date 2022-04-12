@@ -86,35 +86,30 @@ struct TeaDictionary: View {
             HStack{
                 
                 VStack{
-                    Picker("대분류",selection: $selectedCategory1) {
+                    Picker("대분류", selection: $selectedCategory1) {
                         ForEach(0 ..< category1.count, id: \.self) { index in
                             Text(self.category1[index])
                         }
                     }
 
                 }
-                
-                
-                
-        
-            
-                
+
                 if selectedCategory1 > 0 {
-                    
+
 //                    Picker("대분류",selection: $selectedCategory1) {
 //                        ForEach(0 ..< afterCategory1.count, id: \.self) { index in
 //                            Text(afterCategory1[index])
 //                        }
 //                    }
-                    
+
                     let middleCategory: [String] = category2[category1[selectedCategory1]]!
-                    Picker(selection: $selectedCategory2, label: Text("중분류")) {
+                        Picker(selection: $selectedCategory2, label: Text("중분류")) {
                         ForEach(0 ..< middleCategory.count, id: \.self) { index in
                             Text(middleCategory[index])
                         }
                     }
                 } else {
-                   
+
                     Picker(selection: $temp, label: Text("없음")) {
                         Text("중분류")
 
