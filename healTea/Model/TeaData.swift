@@ -50,6 +50,7 @@ extension TeaData {
         
         TeaData(picture_code:"tea_1", name:"보리차2", en_name:"Bori", category1:"대분류보리", category2:"중분류보리2", temperature:"80", time:"1.5", tasting_note:["견과류", "난 향", "달콤한 맛"], good_name:["고혈압", "콜레스테롤", "당뇨병"], good_context:["고혈압에 좋아요", "콜레스테롤에 좋아요", "당뇨병에 좋아요"], bad_name:["임산부", "불면증"], bad_context:["임산부한테 나빠요", "불면증에 나빠요"]),
         
-        TeaData(picture_code:"tea_1", name:"보리차3", en_name:"Bori", category1:"대분류보리", category2:"중분류보리2", temperature:"80", time:"1.5", tasting_note:["견과류", "난 향", "달콤한 맛"], good_name:["고혈압", "콜레스테롤", "당뇨병"], good_context:["고혈압에 좋아요", "콜레스테롤에 좋아요", "당뇨병에 좋아요"], bad_name:["임산부", "불면증"], bad_context:["임산부한테 나빠요", "불면증에 나빠요"])
+        TeaData(picture_code:"tea_1", name:"보리차3", en_name:"Bori", category1:"대분류보리", category2:"중분류보리2", temperature:"80", time:"1.5", tasting_note:["견과류", "난 향", "달콤한 맛"], good_name:["고혈압", "콜레스테롤", "당뇨병"], good_context:["고혈압에 좋아요", "콜레스테롤에 좋아요", "당뇨병에 좋아요"], bad_name:["임산부", "불면증"], bad_context:["임산부한테 나빠요", "불면증에 나빠요"]),
+        
     ]
 }

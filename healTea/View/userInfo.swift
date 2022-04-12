@@ -9,105 +9,129 @@ import SwiftUI
 
 struct userInfo: View {
     
-    var item: [String] = ["이름", "생년월일"]
-    var data: [String] = ["가", "2022.01.01"]
-    
-    @State var nickname: String = "A"
+    @State var nickname: String = "healTea"
     @State private var showAlert = false
     
+    var item: [String] = ["이름", "생년월일"]
+    var data: [String] = ["힐티", "2022.01.01"]
     
-    var body: some View {NavigationView {
-        VStack {
-            ForEach (0..<2) { index in
-                HStack{
-                    Text("\(item[index])")
+    var body: some View {
+        
+        NavigationView {
+            VStack(alignment: .trailing, spacing: 15){
+                
+                ForEach (0..<2) { index in
+                    HStack{
+                        Text("\(item[index])")
+                            .bold()
+                        Spacer()
+                        Text("\(data[index])")
+                            .fontWeight(.ultraLight)
+                    }
+                    .frame(width: 300, height: 10)
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16).stroke(Color.gray)
+                    ).background(RoundedRectangle(cornerRadius: 16).fill(Color.gray.opacity(0.3)))
+                }
+                
+                HStack {
+                    Text("닉네임")
                         .bold()
                     Spacer()
-                    Text("\(data[index])")
+                    Text(nickname)
                         .fontWeight(.ultraLight)
                 }
-                .frame(width: 300)
+                .frame(width: 300, height: 10)
                 .padding()
                 .overlay(
-                    RoundedRectangle(cornerRadius: 16).stroke(Color.gray)
-                ).background(RoundedRectangle(cornerRadius: 16).fill(Color.gray.opacity(0.3)))
-            }
-            
-            HStack {
-                Text("닉네임")
-                    .bold()
+                    RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+
+                
+                HStack {
+                    NavigationLink(destination: DetailView(
+                        nickname: $nickname)
+                    ) {
+                        Text("닉네임 수정")
+                            .font(.system(size: 14))
+                    }
+                    .frame(width: 80, height: 30)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(ColorManager.DonationBar_2))
+                    .background(RoundedRectangle(cornerRadius: 10).fill(ColorManager.DonationBar_2))
+                    
+                    Button("탈퇴하기") {
+                        showAlert=true
+                    }
+                    .font(.system(size: 14))
+                    .frame(width: 80, height: 30)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(ColorManager.DonationBar_2))
+                    .background(RoundedRectangle(cornerRadius: 10).fill(ColorManager.DonationBar_2))
+                    .alert(isPresented: $showAlert){
+                        Alert(
+                            title: Text("탈퇴하시겠습니까?"),
+                            message: Text("탈퇴시, 탈퇴 버튼을 눌러주세요."),
+                            primaryButton: .default(
+                                Text("탈퇴")
+                            ),
+                            secondaryButton: .cancel(Text("취소"))
+                        )
+                    }
+                }
+                .foregroundColor(.white)
+
                 Spacer()
-                Text(nickname)
-                    .fontWeight(.ultraLight)
+                
             }
-            .frame(width: 300)
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 16).stroke(Color.gray)
-            )
-            HStack {
-                NavigationLink(destination: DetailView(nickname: $nickname)) {
-                    Text("닉네임 수정")
-                }
-                Button("탈퇴하기") {
-                    showAlert=true
-                }
-                .alert(isPresented: $showAlert){
-                    Alert(
-                        title: Text("탈퇴하시겠습니까?"),
-                        message: Text("탈퇴시, 탈퇴 버튼을 눌러주세요."),
-                        primaryButton: .default(
-                        Text("탈퇴")
-                        ),
-                        secondaryButton: .cancel(Text("취소"))
-                    )
-                }
-            }
-            .padding(EdgeInsets(top: 10, leading: 180, bottom: 0, trailing:0))
+            .navigationBarTitle("내 정보")
+        }
+    }
+        
+}
 
-            Spacer()
-        } //~VStack
-        .navigationTitle("내 정보")
-
-    } // ~NavigationView
-
-} //~body
-} //~ myInfoView
 
 
 
 struct DetailView: View {
-@Binding var nickname: String
-@State var changeNick: String = ""
-var body: some View {
-    //NavigationView {
-        VStack{
-            HStack {
+
+    @Binding var nickname: String
+    @State var changeNick: String = ""
+    @State private var showingAlert = false
+    
+    var body: some View {
+        
+        VStack(alignment:.trailing){
+            HStack{
                 Text("닉네임")
                     .bold()
                 Spacer()
-                TextField("닉네임", text:$changeNick)
+                TextField("새로운 닉네임", text:$changeNick)
                     .multilineTextAlignment(.trailing)
+                
             }
-            .frame(width: 300)
+            .frame(width: 300, height: 10)
             .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
-            .padding(EdgeInsets(top:0, leading:0, bottom: 0, trailing: 0))
+            
             Button(action:{
                 nickname = changeNick
+                self.showingAlert.toggle()
             }){Text("변경")}
-                .padding(EdgeInsets(top: 10, leading: 290, bottom: 0, trailing: 10))
+                .font(.system(size: 14))
+                .frame(width: 80, height: 30)
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(ColorManager.DonationBar_2))
+                .background(RoundedRectangle(cornerRadius: 10).fill(ColorManager.DonationBar_2))
+                .foregroundColor(.white)
+                .alert(isPresented: $showingAlert) {
+                    Alert (title: Text("닉네임 변경 완료"), message: nil,
+                           dismissButton: .default(Text("확인")))
+                }
             Spacer()
-        //}
-        
-    } //~NavigationView
-    //Button(action: {saveNick()}, label:{Text("저장하기").padding()})
-//        Button(action: {
-//        }, label: {Text("저장").padding()})
-
-} //~body
+            
+        }
+    }
 }
+
 
 
 struct MyAlert: View {
@@ -143,6 +167,7 @@ struct MyAlert: View {
         .frame(width: 200, height:60)
     }
 }
+
 
 struct userInfo_Previews: PreviewProvider {
     static var previews: some View {
