@@ -26,12 +26,15 @@ extension Color {
 
 struct mainpage: View {
     
+
  
     
     
 
 
-   
+
+    
+
     @State var spacing: CGFloat = 10
     @State var headspace: CGFloat = 10
     @State var sidesScaling: CGFloat = 0.8
@@ -48,6 +51,7 @@ struct mainpage: View {
         
       
         
+
         VStack{
         ZStack{
             Rectangle()
@@ -130,15 +134,49 @@ struct mainpage: View {
                 Spacer()
                
                
+            VStack{
+                ZStack{
+                    Image("Logo1")
+                        .resizable()
+                        .frame(width: 70, height: 70, alignment: .center)
+                        .offset(x:0, y:-320)
+                                    
+                    Text("Daily Menu").font(.system(size:36,weight: .bold))
+                        .offset(x: 0, y:-240)
+                        .font(.system(size: 26, weight: .bold))
+                        .foregroundColor(.greencolor)
                     
-            }
-            }
-                
+                    Text("오늘 이 음료 어떠세요.").font(.system(size:24))
+                        .fontWeight(.light)
+                        .foregroundColor(.gray)
+                        .offset(x: 0, y:-200)
 
-
-                
-            } // VStack
-        } // VStack
+                    
+                    ZStack{
+                        ACarousel(roles,
+                                  id: \.self,
+                                  index: $currentIndex,
+                                  spacing: spacing,
+                                  headspace: headspace,
+                                  sidesScaling: sidesScaling,
+                                  isWrap: isWrap,
+                                  autoScroll: autoScroll ? .active(time) : .inactive) { name in
+                            Image(name)
+                                .frame(height: 380)
+                                .frame(width:280)
+                                .cornerRadius(30)
+                                .navigationBarTitle("")
+                                .overlay(RoundedRectangle(cornerRadius: 25)
+                                    .stroke(Color.green))
+                                .shadow(color: Color.gray, radius: 5, x: 1, y: 3)
+                            }
+                            Spacer()
+                            Spacer()
+                        }
+                        .offset(x: 0, y:50)
+                    }
+                } // VStack
+            }
     } // body
  // struct
         
@@ -146,7 +184,6 @@ struct mainpage: View {
 struct Carousel_Previews: PreviewProvider {
     static var previews: some View {
         mainpage()
-
     }
 }
 

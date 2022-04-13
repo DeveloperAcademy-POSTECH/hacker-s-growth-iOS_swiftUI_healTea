@@ -5,7 +5,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            mainpage()
+            DonationView()
                 .tabItem {
                     Image(systemName: "house")
                          .resizable()
@@ -18,12 +18,17 @@ struct ContentView: View {
                     Image(systemName: "leaf")
                     Text("Tea")
                 }
-            Mypage()
+            Mypage2()
                 .tabItem {
                     Image(systemName: "person")
                     Text("My")
                 }
-            Camera()
+            DonationList()
+                .tabItem {
+                    Image(systemName: "globe.americas")
+                    Text("Donation")
+                }
+            Reward()
                 .tabItem {
                     Image(systemName: "barcode.viewfinder")
                     Text("Barcode")
@@ -37,7 +42,7 @@ struct ContentView: View {
             appearance.backgroundColor = UIColor(Color.gray.opacity(0.2))
             
             // Use this appearance when scrolling behind the TabView:
-            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().standardAppearance = appearance 
             // Use this appearance when scrolled all the way up:
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
