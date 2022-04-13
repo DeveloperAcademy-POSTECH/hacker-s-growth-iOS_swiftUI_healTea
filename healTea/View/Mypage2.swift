@@ -63,7 +63,7 @@ struct Mypage2: View {
                     
                     
                     
-                    
+                    userInfo()
                     
                     
                     
