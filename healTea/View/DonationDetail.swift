@@ -15,11 +15,11 @@ struct DonationDetail: View {
                     
                     Spacer()
                 }
-                .padding(.horizontal, 50)
+                .padding(.horizontal, 35)
                 
                 VStack {
                     ZStack {
-                        Box_3()
+                        Box_4()
                         
                         VStack {
                             HStack {
@@ -27,12 +27,12 @@ struct DonationDetail: View {
                                     Text("GREEN PEACE")
                                         .font(.system(size: 20))
                                         .fontWeight(.semibold)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(ColorManager.DonationList)
                                     
                                     Text("(그린피스)")
                                         .font(.system(size: 20))
                                         .fontWeight(.semibold)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(ColorManager.DonationList)
                                 }
                                 
                                 Spacer()
@@ -41,7 +41,7 @@ struct DonationDetail: View {
                                     .resizable()
                                     .clipShape(Circle())
                                     .frame(width: 80, height: 80)
-                                    .shadow(radius: 2)
+                                    .shadow(radius: 3)
                                 
                                 //Circle().frame(width: 80, height: 80)
                                 //    .foregroundColor(Color("DonationBar_3"))
@@ -57,14 +57,14 @@ struct DonationDetail: View {
                                     .font(.system(size: 13.5))
                                     .frame(width: 200, height: 50)
                                     .multilineTextAlignment(.trailing)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(ColorManager.DonationList)
                             }
                             .padding(.horizontal, 70)
                         }
                         .padding(.vertical, 30)
                     }
                 }
-                .padding(.top, 40)
+                .padding(.top, 10)
             }
             
             VStack {
@@ -91,7 +91,7 @@ struct DonationDetail: View {
                                 .resizable()
                                 .clipShape(Circle())
                                 .frame(width: 80, height: 80)
-                                .shadow(radius: 2)
+                                .shadow(radius: 3)
                         }
                         .padding(.horizontal, 70)
                         
@@ -137,7 +137,7 @@ struct DonationDetail: View {
                                 .resizable()
                                 .clipShape(Circle())
                                 .frame(width: 80, height: 80)
-                                .shadow(radius: 2)
+                                .shadow(radius: 3)
                         }
                         .padding(.horizontal, 70)
                         
@@ -176,7 +176,7 @@ struct Box_4: View {
         RoundedRectangle(cornerRadius: 10).frame(width: 330, height: 250)
             .foregroundColor(ColorManager.DonationList)
             .overlay(
-                RoundedRectangle(cornerRadius: 10).frame(width: 328, height: 248)
+                RoundedRectangle(cornerRadius: 10).frame(width: 320, height: 240)
                     .foregroundColor(.white)
             )
     }

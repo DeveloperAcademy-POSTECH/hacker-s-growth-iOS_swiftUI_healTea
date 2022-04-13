@@ -30,10 +30,12 @@
 		39595C8D2800250F00080515 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8C2800250F00080515 /* Camera.swift */; };
 		B3A9F73B280487D400E040B6 /* searchmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9F73A280487D400E040B6 /* searchmenu.swift */; };
 		B3A9F73D28048CEB00E040B6 /* maininfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9F73C28048CEB00E040B6 /* maininfo.swift */; };
-		EE20F2A728058388001CA137 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2A628058388001CA137 /* DonationView.swift */; };
 		EE20F2A9280583C2001CA137 /* DonationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2A8280583C2001CA137 /* DonationList.swift */; };
 		EE20F2AB280583E1001CA137 /* DonationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2AA280583E1001CA137 /* DonationDetail.swift */; };
+		EE2B0578280699870051BE9D /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B0577280699870051BE9D /* DonationView.swift */; };
+		EE426B6C2805DDF9001DFB4E /* actionPrac.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B6B2805DDF9001DFB4E /* actionPrac.swift */; };
 		EE8810DB2803FB02002380FB /* Barchart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8810DA2803FB02002380FB /* Barchart.swift */; };
+		EEFD439B2805F9E0007E51A4 /* ClickDonation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD439A2805F9E0007E51A4 /* ClickDonation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,10 +62,12 @@
 		39595C8C2800250F00080515 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		B3A9F73A280487D400E040B6 /* searchmenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchmenu.swift; sourceTree = "<group>"; };
 		B3A9F73C28048CEB00E040B6 /* maininfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maininfo.swift; sourceTree = "<group>"; };
-		EE20F2A628058388001CA137 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DonationView.swift; path = healTea/DonationView.swift; sourceTree = SOURCE_ROOT; };
 		EE20F2A8280583C2001CA137 /* DonationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationList.swift; sourceTree = "<group>"; };
 		EE20F2AA280583E1001CA137 /* DonationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetail.swift; sourceTree = "<group>"; };
+		EE2B0577280699870051BE9D /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
+		EE426B6B2805DDF9001DFB4E /* actionPrac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actionPrac.swift; sourceTree = "<group>"; };
 		EE8810DA2803FB02002380FB /* Barchart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barchart.swift; sourceTree = "<group>"; };
+		EEFD439A2805F9E0007E51A4 /* ClickDonation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickDonation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +156,10 @@
 		39595C8728001B0300080515 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EE20F2A628058388001CA137 /* DonationView.swift */,
 				EE20F2A8280583C2001CA137 /* DonationList.swift */,
+				EE2B0577280699870051BE9D /* DonationView.swift */,
+				EEFD439A2805F9E0007E51A4 /* ClickDonation.swift */,
+				EE426B6B2805DDF9001DFB4E /* actionPrac.swift */,
 				EE20F2AA280583E1001CA137 /* DonationDetail.swift */,
 				39595C8327FF25AB00080515 /* TeaDictionary.swift */,
 				39595C882800237800080515 /* Mypage.swift */,
@@ -251,6 +257,7 @@
 				22ED323128040D9400E61916 /* ACarouselViewModel.swift in Sources */,
 				22ED323228040D9400E61916 /* View+ReceiveTimer.swift in Sources */,
 				39595C5527FEB80B00080515 /* Persistence.swift in Sources */,
+				EE2B0578280699870051BE9D /* DonationView.swift in Sources */,
 				39595C892800237800080515 /* Mypage.swift in Sources */,
 				B3A9F73D28048CEB00E040B6 /* maininfo.swift in Sources */,
 				EE20F2AB280583E1001CA137 /* DonationDetail.swift in Sources */,
@@ -258,15 +265,16 @@
 				22DB8F842802A91700E7D8BF /* DonationData.swift in Sources */,
 				22ED323328040D9400E61916 /* ACarouselAutoScroll.swift in Sources */,
 				39595C4E27FEB80A00080515 /* ContentView.swift in Sources */,
+				EEFD439B2805F9E0007E51A4 /* ClickDonation.swift in Sources */,
 				39595C8B2800249D00080515 /* Home.swift in Sources */,
 				22ED32232804095C00E61916 /* ACarousel.swift in Sources */,
 				39595C8027FF203F00080515 /* TeaData.swift in Sources */,
 				39595C8D2800250F00080515 /* Camera.swift in Sources */,
-				EE20F2A728058388001CA137 /* DonationView.swift in Sources */,
 				EE20F2A9280583C2001CA137 /* DonationList.swift in Sources */,
 				39595C8427FF25AB00080515 /* TeaDictionary.swift in Sources */,
 				22DB8F8D2804087200E7D8BF /* mainpage.swift in Sources */,
 				39595C4C27FEB80A00080515 /* healTeaApp.swift in Sources */,
+				EE426B6C2805DDF9001DFB4E /* actionPrac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

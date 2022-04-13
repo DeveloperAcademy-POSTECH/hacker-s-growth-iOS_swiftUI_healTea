@@ -17,7 +17,6 @@ struct TeaDictionary: View {
  
     
     var teaData: [TeaData]
-
     
     init(teaData: [TeaData]) {
         self.teaData = teaData
