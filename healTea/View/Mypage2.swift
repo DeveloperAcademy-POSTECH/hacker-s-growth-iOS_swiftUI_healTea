@@ -113,7 +113,7 @@ struct Mypage2: View {
                                 
                                 
                                 
-                                NavigationLink(destination: Text("다시 조사하는 페이지")) {
+                                NavigationLink(destination: Survey()) {
                                     Text("다시 조사하기").foregroundColor(.white)
                                 }
                             }
