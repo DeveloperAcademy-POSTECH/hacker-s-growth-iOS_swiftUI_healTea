@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct DonationView: View {
+    
+    @State private var selected1 = true
+    @State private var selected2 = false
+    @State private var selected3 = false
+    
     var body: some View {
         NavigationView {
         
@@ -101,101 +106,144 @@ struct DonationView: View {
             
                     VStack {
                         ZStack {
-                            Box_2()
-            
-                            HStack {
-                                Image("don_0")
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .frame(width: 60, height: 60)
-                                    .shadow(radius: 3)
-            
-                                VStack(alignment: .leading) {
-                                    Text("GREEN PEACE (그린피스)")
-                                        .fontWeight(.medium)
-                                        .foregroundColor(.white)
-            
-                                    Spacer()
-            
-                                    Text("2000₩")
-                                        .fontWeight(.light)
-                                        .foregroundColor(.white)
+                            Button(action: {
+                                self.selected1.toggle()  // self는 class에서 자기자신을 가리키는 단어. self.selected라는 것은 이 메서드(?) 내에서 정의된 selected가 toggle 되도록
+                            }) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10).frame(width: 310, height: 100)
+                                        .foregroundColor(ColorManager.DonationList)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 10).frame(width: 308, height: 98)
+                                                .foregroundColor(selected1 ? ColorManager.DonationList : Color.white)
+                                    )
+                                    
+                                    HStack {
+                                        Image("don_0")
+                                            .resizable()
+                                            .clipShape(Circle())
+                                            .frame(width: 60, height: 60)
+                                            .shadow(radius: 3)
+                    
+                                        VStack(alignment: .leading) {
+                                            Text("GREEN PEACE (그린피스)")
+                                                .fontWeight(.medium)
+                                                .foregroundColor(selected1 ? Color.white : Color.black)
+                                                .multilineTextAlignment(.leading)
+                    
+                                            Spacer()
+                    
+                                            Text("2000₩")
+                                                .fontWeight(.light)
+                                                .foregroundColor(selected1 ? Color.white : Color.black)
+                                        }
+                                        .padding()
+                    
+                                        Spacer()
+                    
+                                    }
+                                    .padding(.horizontal, 70)
+                                    
                                 }
-                                .padding()
-            
-                                Spacer()
-            
                             }
-                            .padding(.horizontal, 70)
                         }
                     }
                     .padding(.top, 8)
             
                     VStack {
                         ZStack {
-                            Box_1()
-            
-                            HStack {
-                                Image("don_1")
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .frame(width: 60, height: 60)
-                                    .shadow(radius: 3)
-            
-                                VStack(alignment: .leading) {
-                                    Text("WWF (세계자연기금)")
-                                        .fontWeight(.medium)
-                                        .frame(width: 101)
-            
-                                    Spacer()
-            
-                                    Text("2000₩")
-                                        .fontWeight(.light)
-            
+                            Button(action: {
+                                self.selected2.toggle()  // self는 class에서 자기자신을 가리키는 단어. self.selected라는 것은 이 메서드(?) 내에서 정의된 selected가 toggle 되도록
+                            }) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10).frame(width: 310, height: 100)
+                                        .foregroundColor(ColorManager.DonationList)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 10).frame(width: 308, height: 98)
+                                                .foregroundColor(selected2 ? ColorManager.DonationList : Color.white)
+                                    )
+                                    
+                                    HStack {
+                                        Image("don_1")
+                                            .resizable()
+                                            .clipShape(Circle())
+                                            .frame(width: 60, height: 60)
+                                            .shadow(radius: 3)
+                    
+                                        VStack(alignment: .leading) {
+                                            Text("WWF (세계자연기금)")
+                                                .fontWeight(.medium)
+                                                .foregroundColor(selected2 ? Color.white : Color.black)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: 101)
+                    
+                                            Spacer()
+                    
+                                            Text("2000₩")
+                                                .fontWeight(.light)
+                                                .foregroundColor(selected2 ? Color.white : Color.black)
+                                        }
+                                        .padding()
+                    
+                                        Spacer()
+                    
+                                    }
+                                    .padding(.horizontal, 70)
+                                    
                                 }
-                                .padding()
-            
-                                Spacer()
-            
                             }
-                            .padding(.horizontal, 70)
                         }
                     }
                     .padding(.top, 8)
             
                     VStack {
                         ZStack {
-                            Box_1()
-            
-                            HStack {
-                                Image("don_2")
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .frame(width: 60, height: 60)
-                                    .shadow(radius: 3)
-            
-                                VStack(alignment: .leading) {
-                                    Text("K-Green Foundation (환경재단)")
-                                        .fontWeight(.medium)
-                                        .frame(width: 160)
-            
-                                    Spacer()
-            
-                                    Text("2000₩")
-                                        .fontWeight(.light)
-            
+                            Button(action: {
+                                self.selected3.toggle()  // self는 class에서 자기자신을 가리키는 단어. self.selected라는 것은 이 메서드(?) 내에서 정의된 selected가 toggle 되도록
+                            }) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10).frame(width: 310, height: 100)
+                                        .foregroundColor(ColorManager.DonationList)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 10).frame(width: 308, height: 98)
+                                                .foregroundColor(selected3 ? ColorManager.DonationList : Color.white)
+                                    )
+                                    
+                                    HStack {
+                                        Image("don_2")
+                                            .resizable()
+                                            .clipShape(Circle())
+                                            .frame(width: 60, height: 60)
+                                            .shadow(radius: 3)
+                    
+                                        VStack(alignment: .leading) {
+                                            Text("K-Green Foundation (환경재단)")
+                                                .fontWeight(.medium)
+                                                .foregroundColor(selected3 ? Color.white : Color.black)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: 160)
+                    
+                                            Spacer()
+                    
+                                            Text("2000₩")
+                                                .fontWeight(.light)
+                                                .foregroundColor(selected3 ? Color.white : Color.black)
+                                        }
+                                        .padding()
+                    
+                                        Spacer()
+                    
+                                    }
+                                    .padding(.horizontal, 70)
+                                    
                                 }
-                                .padding()
-            
-                                Spacer()
-            
                             }
-                            .padding(.horizontal, 70)
                         }
                     }
                     .padding(.top, 8)
+                    
                 }
                 .padding(.bottom, 50)
+                
             }
         }
     }
