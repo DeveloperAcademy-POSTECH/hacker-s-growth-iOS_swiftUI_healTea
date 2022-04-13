@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+
+
 struct Detail: View {
     var id: UUID
     var teas: [TeaData]{
@@ -17,6 +19,12 @@ struct Detail: View {
     }
     
     var body: some View {
+        NavigationView{
+        
+        
+        
+        
+        
         VStack{
             HStack{
                 VStack{
@@ -64,4 +72,5 @@ struct Detail: View {
             }
         }
   }
+}
 }

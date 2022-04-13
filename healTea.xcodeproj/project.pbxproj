@@ -32,11 +32,9 @@
 		39595C8D2800250F00080515 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8C2800250F00080515 /* Camera.swift */; };
 		B3A9F73B280487D400E040B6 /* searchmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9F73A280487D400E040B6 /* searchmenu.swift */; };
 		B3A9F73D28048CEB00E040B6 /* maininfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9F73C28048CEB00E040B6 /* maininfo.swift */; };
-
 		EE20F2A728058388001CA137 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2A628058388001CA137 /* DonationView.swift */; };
 		EE20F2A9280583C2001CA137 /* DonationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2A8280583C2001CA137 /* DonationList.swift */; };
 		EE20F2AB280583E1001CA137 /* DonationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2AA280583E1001CA137 /* DonationDetail.swift */; };
-
 		EE8810DB2803FB02002380FB /* Barchart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8810DA2803FB02002380FB /* Barchart.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,11 +64,9 @@
 		39595C8C2800250F00080515 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		B3A9F73A280487D400E040B6 /* searchmenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchmenu.swift; sourceTree = "<group>"; };
 		B3A9F73C28048CEB00E040B6 /* maininfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maininfo.swift; sourceTree = "<group>"; };
-
 		EE20F2A628058388001CA137 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DonationView.swift; path = healTea/DonationView.swift; sourceTree = SOURCE_ROOT; };
 		EE20F2A8280583C2001CA137 /* DonationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationList.swift; sourceTree = "<group>"; };
 		EE20F2AA280583E1001CA137 /* DonationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetail.swift; sourceTree = "<group>"; };
-
 		EE8810DA2803FB02002380FB /* Barchart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barchart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +110,7 @@
 				39595C4927FEB80A00080515 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		39595C4927FEB80A00080515 /* Products */ = {
 			isa = PBXGroup;
@@ -407,7 +404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"healTea/Preview Content\"";
-				DEVELOPMENT_TEAM = PQ5FS4VVLR;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = healTea/Info.plist;
@@ -437,7 +434,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"healTea/Preview Content\"";
-				DEVELOPMENT_TEAM = PQ5FS4VVLR;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = healTea/Info.plist;

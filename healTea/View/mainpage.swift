@@ -4,14 +4,19 @@
 //
 //  Created by Autumn on 2020/11/16.
 //
-
+import Foundation
 import SwiftUI
 import ACarousel
+
                
 //struct Item: Identifiable {
 //    let id = UUID()
 //    let image: Image
 //}
+
+
+
+
 
 let roles = ["b1", "b2", "b3","b4", "b5", "b6","b7", "b8", "b9","b10"]
 
@@ -21,8 +26,12 @@ extension Color {
 
 struct mainpage: View {
     
+ 
     
-    @State private var showModal = false
+    
+
+
+   
     @State var spacing: CGFloat = 10
     @State var headspace: CGFloat = 10
     @State var sidesScaling: CGFloat = 0.8
@@ -30,9 +39,14 @@ struct mainpage: View {
     @State var autoScroll: Bool = false
     @State var time: TimeInterval = 5
     @State var currentIndex: Int = 5
+    @State var gotoView2 = false
             
     var body: some View {
-        NavigationView {
+        
+     
+        
+        
+      
         
         VStack{
         ZStack{
@@ -41,24 +55,24 @@ struct mainpage: View {
                 .frame(width: 400)
                 .frame(height: 85)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
-                .offset(y:-80)
+                .offset(y:0)
         
 
             Image("logo")
                         .resizable()
                         .frame(width: 60, height: 60, alignment: .center)
-                        .offset(x:0, y:-127)
+                        .offset(x:0, y:-50)
    
                   
             Image("search")
                 .frame(width: 44, height: 44)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
-                .offset(x:150, y:-80)
+                .offset(x:150, y:0)
                             
    
             
             Text("Daily Menu").font(.system(size:36,weight: .bold))
-                .offset(x: 0, y:-50)
+                .offset(x: 0, y:30)
             
             .font(.system(size: 26, weight: .bold))
             .foregroundColor(.greencolor)
@@ -72,10 +86,8 @@ struct mainpage: View {
                     
                     .fontWeight(.light)
                     .foregroundColor(.gray)
-                    .offset(x: 0, y:-100)
-                    
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    Spacer().frame(height:50)
+                    .offset(x: 0, y:-20)
+                    Spacer()
                 
                 
                 
@@ -86,7 +98,8 @@ struct mainpage: View {
                                 
                                     
                            
-                HStack{
+                VStack{
+                    
                 
                 ACarousel(roles,
                           id: \.self,
@@ -103,17 +116,19 @@ struct mainpage: View {
                         
                     Image(name)
                         
-                        .frame(height: 380)
-                        .frame(width:280)
+                        .frame(height: 400).offset(y:-30)
+                        .frame(width:390)
                         .cornerRadius(30)
                         .navigationBarTitle("")
+                        
+                       
                         
                     
                 }
                 
                         
                 Spacer()
-                Spacer()
+               
                
                     
             }
@@ -125,7 +140,7 @@ struct mainpage: View {
             } // VStack
         } // VStack
     } // body
-} // struct
+ // struct
         
 
 struct Carousel_Previews: PreviewProvider {
@@ -134,4 +149,5 @@ struct Carousel_Previews: PreviewProvider {
 
     }
 }
+
 
