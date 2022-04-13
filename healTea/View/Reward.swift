@@ -1,10 +1,3 @@
-//
-//  Reward.swift
-//  healTea
-//
-//  Created by Geunil Park on 2022/04/12.
-//
-
 import SwiftUI
 
 struct Reward: View {
@@ -12,7 +5,11 @@ struct Reward: View {
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State var changeImage = false
     @State var openCameraRoll = false
+    @State var isCamera = false
+    @State var isPhoto = false
     @State var imageSelected = UIImage()
+    @State private var myMoney = UserDefaults.standard.integer(forKey: "MyMoney")
+    @State private var showAlert = false
     
     var body: some View {
         VStack {
@@ -21,12 +18,27 @@ struct Reward: View {
                     self.sourceType = .camera
                     changeImage = true
                     openCameraRoll = true
+                    isCamera = true
+                    isPhoto = false
                 }
+                .foregroundColor(.white)
+                .padding(.horizontal, 50)
+                .padding(.vertical, 10)
+                .background(isCamera ? Color.green : .gray)
+                .cornerRadius(15)
+
                 Button("Photo") {
                     self.sourceType = .photoLibrary
                     changeImage = true
                     openCameraRoll = true
+                    isPhoto = true
+                    isCamera = false
                 }
+                .foregroundColor(.white)
+                .padding(.horizontal, 55)
+                .padding(.vertical, 10)
+                .background(isPhoto ? Color.green : .gray)
+                .cornerRadius(15)
             }.padding(.top, 10)
             
             VStack {
@@ -36,6 +48,7 @@ struct Reward: View {
                         .aspectRatio(contentMode: .fit)
                 } else {
                     Text("사진을 넣어주세요")
+                        .foregroundColor(.black)
                 }
             }
             .padding(.horizontal, 30)
@@ -48,9 +61,63 @@ struct Reward: View {
                 .font(.title)
                 .frame(width: 320, height: 60, alignment: .leading)
                 .padding(.top, 10)
+                .foregroundColor(.black)
             
             VStack {
-                Text("hello")
+                HStack {
+                    Text("현재 나의 온도")
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("\(myMoney) 원")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.green)
+                }
+                HStack {
+                    Text("예상 추가 리워드 금액")
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("5 원")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.green)
+                }
+                HStack {
+                    Text("나의 예상 온도")
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("\(myMoney + 5) 원")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.green)
+                }
+                .padding(.top, 20)
+                HStack {
+                    Spacer()
+                    Button("리워드 받기") {
+                        if changeImage {
+                            self.myMoney += 5
+                            UserDefaults.standard.set(self.myMoney, forKey: "MyMoney")
+                        } else {
+                            showAlert = true
+                        }
+                    }
+                    .alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("사진이 없습니다."),
+                                message: Text("영수증 사진을 가져와주세요.")
+                            )
+                        }
+                    .foregroundColor(.white)
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .background(Color.green)
+                    .cornerRadius(15)
+                }
+                .padding(.top, 20)
             }
             .padding(.horizontal, 30)
             .frame(width: 330, height: 250, alignment: .center)
