@@ -121,8 +121,12 @@ struct Mypage2: View {
                         }
                     }
                 }
-                Spacer().frame(height:150)
+                //Spacer().frame(height:130)
+                
             }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+           
         }
         
     }

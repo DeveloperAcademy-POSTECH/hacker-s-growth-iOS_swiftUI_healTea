@@ -18,7 +18,7 @@ struct ContentView: View {
                     Image(systemName: "leaf")
                     Text("Tea")
                 }
-            Mypage()
+            Mypage2()
                 .tabItem {
                     Image(systemName: "person")
                     Text("My")
