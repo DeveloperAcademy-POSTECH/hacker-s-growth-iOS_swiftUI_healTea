@@ -23,6 +23,11 @@ struct ContentView: View {
                     Image(systemName: "person")
                     Text("My")
                 }
+            DonationList()
+                .tabItem {
+                    Image(systemName: "globe.americas")
+                    Text("Donation")
+                }
             Reward()
                 .tabItem {
                     Image(systemName: "barcode.viewfinder")
