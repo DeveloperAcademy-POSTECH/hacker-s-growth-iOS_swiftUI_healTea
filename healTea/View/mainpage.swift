@@ -42,52 +42,33 @@ struct mainpage: View {
                 .frame(height: 85)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
                 .offset(y:-80)
-        
-
+            
             Image("logo")
                         .resizable()
                         .frame(width: 60, height: 60, alignment: .center)
                         .offset(x:0, y:-127)
    
-                  
             Image("search")
                 .frame(width: 44, height: 44)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
                 .offset(x:150, y:-80)
                             
-   
-            
             Text("Daily Menu").font(.system(size:36,weight: .bold))
                 .offset(x: 0, y:-50)
             
             .font(.system(size: 26, weight: .bold))
             .foregroundColor(.greencolor)
             .padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
-                        
- 
         }
             
             VStack{
                 Text("오늘 이 음료 어떠세요.").font(.system(size:24))
-                    
                     .fontWeight(.light)
                     .foregroundColor(.gray)
                     .offset(x: 0, y:-100)
-                    
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    Spacer().frame(height:50)
                 
-                
-                
-                            
-                
-            
-        
-                                
-                                    
-                           
                 HStack{
-                
                 ACarousel(roles,
                           id: \.self,
                           index: $currentIndex,
@@ -97,31 +78,16 @@ struct mainpage: View {
                           isWrap: isWrap,
                           autoScroll: autoScroll ? .active(time) : .inactive) { name in
                           
-                    
-                  
-                    
-                        
                     Image(name)
-                        
                         .frame(height: 380)
                         .frame(width:280)
                         .cornerRadius(30)
                         .navigationBarTitle("")
-                        
-                    
                 }
-                
-                        
                 Spacer()
                 Spacer()
-               
-                    
             }
             }
-                
-
-
-                
             } // VStack
         } // VStack
     } // body
