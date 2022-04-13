@@ -14,16 +14,19 @@ struct Survey: View {
     @State var selections: [String] = []
     
     var body: some View {
-
+        
+        NavigationView {
         VStack(alignment: .trailing) {
+            
             VStack(alignment: .leading){
                 VStack(alignment: .leading){
-                    Text("사용자 조사")
-                        .font(.title2)
+//                    Text("사용자 조사")
+//                        .font(.title)
                     Text("본인에게 해당되는 것을 선택하세요.")
                         .font(.subheadline).foregroundColor(.gray)
                 }
-                .padding(EdgeInsets(top: 50, leading: 0, bottom: 30, trailing: 0))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
+                
                 VStack(alignment: .leading) {
                     Text("특이사항 및 질병").font(.subheadline)
                 ForEach(self.items1, id: \.self) { item in
@@ -52,7 +55,8 @@ struct Survey: View {
                     }
                 }
                 
-            }.padding(.bottom, 40)
+            }.padding(.bottom, 10)
+            
             
           Button("완료") {
                 //메인페이지 or 이전페이지로 이동.
@@ -65,7 +69,14 @@ struct Survey: View {
             
             Spacer()
         }
+            
+        .navigationBarHidden(true)
+    }.navigationTitle("사용자 조사")
+        
+        
     }
+    
+    
 }
 
 
@@ -87,7 +98,7 @@ struct MultipleSelectionRow: View {
                     
             }
             .padding()
-            .frame(width: 300, height: 45, alignment: .leading)
+            .frame(width: 330, height: 45, alignment: .leading)
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(ColorManager.DonationBackground, lineWidth: 2))
             .foregroundColor(isSelected ? Color.black: Color.gray)
 
