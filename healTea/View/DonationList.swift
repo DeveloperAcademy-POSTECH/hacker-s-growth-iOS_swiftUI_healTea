@@ -1,3 +1,9 @@
+//
+//  DonationList.swift
+//  healTea
+//
+//  Created by 유정인 on 2022/04/13.
+//
 
 import SwiftUI
 
@@ -279,7 +285,6 @@ struct DonationList: View {
 //    }
 //}
 
-
 //struct donationButton: View {
 //
 //    @State private var showingAlert = false
@@ -300,7 +305,6 @@ struct DonationList: View {
 //        }
 //    }
 //}
-
 
 struct DonationList_Previews: PreviewProvider {
     static var previews: some View {
