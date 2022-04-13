@@ -9,6 +9,7 @@ struct DonationList: View {
         NavigationView {
             VStack {
                 HStack {
+                    
                     Text("나의 기부")
                         .foregroundColor(ColorManager.DonationFont)
                         .font(.system(size: 30))
@@ -39,7 +40,7 @@ struct DonationList: View {
                     }
                     .padding(.horizontal, 50)
                 }
-                .padding(.top, 40)
+                .padding(.top, 30)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 10).frame(width: 350, height: 230)
@@ -190,93 +191,93 @@ struct DonationList: View {
     }
 }
 
-struct Box_1: View {
-    
-    var body: some View {
-        RoundedRectangle(cornerRadius: 10).frame(width: 330, height: 80)
-            .foregroundColor(ColorManager.DonationList)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10).frame(width: 328, height: 78)
-                    .foregroundColor(.white)
-            )
-    }
-}
-
-struct Box_2: View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 10).frame(width: 330, height: 80)
-            .foregroundColor(ColorManager.DonationList)
-        
-    }
-}
-
-struct TextFieldClearButton: ViewModifier {
-
-    @Binding var text: String
-
-    func body(content: Content) -> some View {
-        ZStack(alignment: .trailing) {
-            content
-
-                .overlay {
-                    if !text.isEmpty {
-                        HStack {
-                            Spacer()
-                            Button(
-                                action: {
-                                    self.text = ""
-                                })
-                            {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(Color(UIColor.opaqueSeparator))
-                            }
-                        }
-                        .padding(.trailing, 4)
-                    }
-                }
-        }
-    }
-}
-
-struct ClearButton: View {
-    @State var money = ""
-
-    var body: some View {
-
-        VStack {
-            TextField("기부할 금액을 입력하세요.", text: $money)
-                .textFieldStyle(.roundedBorder)
-                .modifier(TextFieldClearButton(text: $money))
-                .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
-                .foregroundColor(ColorManager.DonationFont)
-
-        }
-        .padding()
-
-    }
-}
-
-struct donationButton: View {
-    @State private var showingAlert = false
-    
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10).frame(width: 100, height: 40)
-                .foregroundColor(ColorManager.DonationList)
-            
-            Button(action: {
-                self.showingAlert = true
-            }) {
-                Text("기부하기")
-                    .foregroundColor(.white)
-            }
-            .alert(isPresented: $showingAlert) {
-                Alert(title:  Text("기부"), message: Text("기부가 완료되었습니다"))
-            
-            }
-        }
-    }
-}
+//struct Box_1: View {
+//
+//    var body: some View {
+//        RoundedRectangle(cornerRadius: 10).frame(width: 330, height: 80)
+//            .foregroundColor(ColorManager.DonationList)
+//            .overlay(
+//                RoundedRectangle(cornerRadius: 10).frame(width: 328, height: 78)
+//                    .foregroundColor(.white)
+//            )
+//    }
+//}
+//
+//struct Box_2: View {
+//    var body: some View {
+//        RoundedRectangle(cornerRadius: 10).frame(width: 310, height: 80)
+//            .foregroundColor(ColorManager.DonationList)
+//
+//    }
+//}
+//
+//struct TextFieldClearButton: ViewModifier {
+//
+//    @Binding var text: String
+//
+//    func body(content: Content) -> some View {
+//        ZStack(alignment: .trailing) {
+//            content
+//
+//                .overlay {
+//                    if !text.isEmpty {
+//                        HStack {
+//                            Spacer()
+//                            Button(
+//                                action: {
+//                                    self.text = ""
+//                                })
+//                            {
+//                                Image(systemName: "xmark.circle.fill")
+//                                    .foregroundColor(Color(UIColor.opaqueSeparator))
+//                            }
+//                        }
+//                        .padding(.trailing, 4)
+//                    }
+//                }
+//        }
+//    }
+//}
+//
+//struct ClearButton: View {
+//    @State var money = ""
+//
+//    var body: some View {
+//
+//        VStack {
+//            TextField("기부할 금액을 입력하세요.", text: $money)
+//                .textFieldStyle(.roundedBorder)
+//                .modifier(TextFieldClearButton(text: $money))
+//                .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
+//                .foregroundColor(ColorManager.DonationFont)
+//
+//        }
+//        .padding()
+//
+//    }
+//}
+//
+//struct donationButton: View {
+//    @State private var showingAlert = false
+//
+//    var body: some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 10).frame(width: 100, height: 40)
+//                .foregroundColor(ColorManager.DonationList)
+//
+//            Button(action: {
+//                self.showingAlert = true
+//            }) {
+//                Text("기부하기")
+//                    .foregroundColor(.white)
+//            }
+//            .alert(isPresented: $showingAlert) {
+//                Alert(title:  Text("기부"), message: Text("기부가 완료되었습니다"))
+//
+//            }
+//        }
+//    }
+//}
 
 
 //struct donationButton: View {
