@@ -40,3 +40,9 @@ struct searchmenu: View {
         }
     }
 }
+
+//struct searchmenu_Previews: PreviewProvider {
+//    static var previews: some View {
+//        searchmenu()
+//    }
+//}
