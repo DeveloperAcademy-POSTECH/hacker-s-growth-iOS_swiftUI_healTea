@@ -30,6 +30,7 @@
 		39595C8D2800250F00080515 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39595C8C2800250F00080515 /* Camera.swift */; };
 		B3A9F73B280487D400E040B6 /* searchmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9F73A280487D400E040B6 /* searchmenu.swift */; };
 		B3A9F73D28048CEB00E040B6 /* maininfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9F73C28048CEB00E040B6 /* maininfo.swift */; };
+		B62E03562805B62C00BD60E5 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E03552805B62C00BD60E5 /* Survey.swift */; };
 		B63013BE2805523B00410CFF /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63013BD2805523B00410CFF /* userInfo.swift */; };
 		EE8810DB2803FB02002380FB /* Barchart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8810DA2803FB02002380FB /* Barchart.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		39595C8C2800250F00080515 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		B3A9F73A280487D400E040B6 /* searchmenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchmenu.swift; sourceTree = "<group>"; };
 		B3A9F73C28048CEB00E040B6 /* maininfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maininfo.swift; sourceTree = "<group>"; };
+		B62E03552805B62C00BD60E5 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		B63013BD2805523B00410CFF /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
 		EE8810DA2803FB02002380FB /* Barchart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barchart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +159,7 @@
 				B3A9F73C28048CEB00E040B6 /* maininfo.swift */,
 				B3A9F73A280487D400E040B6 /* searchmenu.swift */,
 				B63013BD2805523B00410CFF /* userInfo.swift */,
+				B62E03552805B62C00BD60E5 /* Survey.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				39595C892800237800080515 /* Mypage.swift in Sources */,
 				B3A9F73D28048CEB00E040B6 /* maininfo.swift in Sources */,
 				B63013BE2805523B00410CFF /* userInfo.swift in Sources */,
+				B62E03562805B62C00BD60E5 /* Survey.swift in Sources */,
 				22ED323028040D9400E61916 /* AppLifeCycleModifier.swift in Sources */,
 				22DB8F842802A91700E7D8BF /* DonationData.swift in Sources */,
 				22ED323328040D9400E61916 /* ACarouselAutoScroll.swift in Sources */,
