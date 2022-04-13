@@ -9,11 +9,13 @@ import SwiftUI
 
 struct Survey: View {
     
-    @State var items: [String] = ["나는 카페인을 즐겨마신다.", "Two", "Three", "Four", "Five"]
+    @State var items: [String] = ["나는 카페인을 즐겨마신다.", "나는 단 걸 좋아한다.", "Three", "Four", "Five"]
     @State var selections: [String] = []
     
     var body: some View {
-        VStack {
+        
+        VStack(alignment: .trailing) {
+            
             VStack(alignment: .leading){
 
                 VStack(alignment: .leading){
@@ -35,11 +37,18 @@ struct Survey: View {
                         }
                     }
                 }
-                Spacer()
             }
+            
+
             Button("완료") {
                 //메인페이지 or 이전페이지로 이동.
             }
+            .frame(width: 80, height: 30)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(ColorManager.DonationBar_2))
+            .background(RoundedRectangle(cornerRadius: 10).fill(ColorManager.DonationBar_2))
+            .foregroundColor(.white)
+            
+            Spacer()
     }
     }
 }
@@ -54,6 +63,7 @@ struct MultipleSelectionRow: View {
         Button(action: self.action) {
             HStack {
                 Text(self.question)
+                    .font(.system(size: 15, weight: .light))
                 if self.isSelected {
                     Spacer()
                     Image(systemName: "checkmark")
@@ -62,11 +72,11 @@ struct MultipleSelectionRow: View {
             }
             .padding()
             .foregroundColor(Color.black)
-            .frame(width: 300, height: 55, alignment: .leading)
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.green, lineWidth: 2))
+            .frame(width: 300, height: 50, alignment: .leading)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(ColorManager.DonationBackground, lineWidth: 2))
             
         }
-        .padding(9)
+        .padding(5)
     }
 }
 
