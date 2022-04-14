@@ -23,7 +23,7 @@ struct ContentView: View {
                     Image(systemName: "person")
                     Text("My")
                 }
-            DonationList()
+            DonationView()
                 .tabItem {
                     Image(systemName: "globe.americas")
                     Text("Donation")

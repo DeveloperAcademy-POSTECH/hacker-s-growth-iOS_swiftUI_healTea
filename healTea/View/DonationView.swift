@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DonationView: View {
     
+    @State var money = ""
     @State private var selected1 = true
     @State private var selected2 = false
     @State private var selected3 = false
@@ -17,6 +18,10 @@ struct DonationView: View {
     private var donations = [["don_0", "그린 피스", "Green Peace"],
                              ["don_1", "세계 자연 기금", "WWF"],
                              ["don_2", "환경 재단", "K-Green Foundation"]]
+    
+    @State private var greenPeace = UserDefaults.standard.integer(forKey: "GreenPeace")
+    @State private var wwf = UserDefaults.standard.integer(forKey: "WWF")
+    @State private var kGreen = UserDefaults.standard.integer(forKey: "KGreen")
     
     var body: some View {
         NavigationView {
@@ -87,13 +92,13 @@ struct DonationView: View {
             
                             VStack(alignment: .trailing) {
                                 HStack {
-                                    ClearButton()
+                                    ClearButton(money: $money)
             
                                     Text("원")
                                         .foregroundColor(ColorManager.DonationFont)
                                     
                                 }
-                                donationButton()
+                                donationButton(money: $money, greenPeace: $greenPeace, wwf: $wwf, kGreen: $kGreen, selected_donation: $selected_donation)
                                 
                             }
                             .padding(.horizontal, 60)
@@ -132,7 +137,7 @@ struct DonationView: View {
                     
                                             Spacer()
                     
-                                            Text("₩ 2000")
+                                            Text("₩ \(greenPeace)")
                                                 .fontWeight(.light)
                                                 .foregroundColor(selected1 ? Color.white : Color.black)
                                         }
@@ -181,7 +186,7 @@ struct DonationView: View {
                     
                                             Spacer()
                     
-                                            Text("₩ 2000")
+                                            Text("₩ \(wwf)")
                                                 .fontWeight(.light)
                                                 .foregroundColor(selected2 ? Color.white : Color.black)
                                         }
@@ -230,7 +235,7 @@ struct DonationView: View {
                     
                                             Spacer()
                     
-                                            Text("₩ 2000")
+                                            Text("₩ \(kGreen)")
                                                 .fontWeight(.light)
                                                 .foregroundColor(selected3 ? Color.white : Color.black)
                                         }
@@ -304,7 +309,7 @@ struct TextFieldClearButton: ViewModifier {
 }
 
 struct ClearButton: View {
-    @State var money = ""
+    @Binding var money: String
 
     var body: some View {
 
@@ -314,7 +319,6 @@ struct ClearButton: View {
                 .modifier(TextFieldClearButton(text: $money))
                 .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
                 .foregroundColor(ColorManager.DonationFont)
-
         }
         .padding()
 
@@ -323,6 +327,11 @@ struct ClearButton: View {
 
 struct donationButton: View {
     @State private var showingAlert = false
+    @Binding var money: String
+    @Binding var greenPeace: Int
+    @Binding var wwf: Int
+    @Binding var kGreen: Int
+    @Binding var selected_donation: Int
     
     var body: some View {
         ZStack {
@@ -331,6 +340,19 @@ struct donationButton: View {
             
             Button(action: {
                 self.showingAlert = true
+                let dona = Int(money)!
+                if selected_donation == 0 {
+                    let now_sum = dona + greenPeace
+                    UserDefaults.standard.set(now_sum, forKey: "GreenPeace")
+                } else if selected_donation == 1 {
+                    let now_sum = dona + wwf
+                    UserDefaults.standard.set(now_sum, forKey: "WWF")
+                } else if selected_donation == 2 {
+                    let now_sum = dona + kGreen
+                    UserDefaults.standard.set(now_sum, forKey: "KGreen")
+                } else {
+                    
+                }
             }) {
                 Text("기부하기")
                     .foregroundColor(.white)
