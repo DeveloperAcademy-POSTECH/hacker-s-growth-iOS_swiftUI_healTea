@@ -11,6 +11,8 @@ import SwiftUI
 struct Mypage: View {
     
     var body: some View {
+        
+        
        
         VStack{
             //검색
