@@ -13,6 +13,7 @@ struct Detail: View {
     var name: String
     var teas: [TeaData]{
         TeaData.sampleData.filter{ (t: TeaData) -> Bool in
+            print("[Detail] \(self.name) , \(t.name) => \(self.name == t.name)")
             return self.name == t.name
         }
     }

@@ -83,13 +83,12 @@ struct userInfo: View {
                 
             }
             .navigationBarTitle("내 정보")
+            .navigationBarHidden(true)
         }
+        .padding(.top)
     }
         
 }
-
-
-
 
 struct DetailView: View {
 
