@@ -21,7 +21,6 @@ extension Color {
 
 struct mainpage: View {
     
-    
     @State private var showModal = false
     @State var spacing: CGFloat = 10
     @State var headspace: CGFloat = 10
@@ -34,62 +33,48 @@ struct mainpage: View {
     var body: some View {
         NavigationView {
         
-        VStack{
-        ZStack{
-            Rectangle()
-                .fill(Color.greencolor)
-                .frame(width: 400)
-                .frame(height: 85)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
-                .offset(y:-80)
-            
-            Image("logo")
-                        .resizable()
-                        .frame(width: 60, height: 60, alignment: .center)
-                        .offset(x:0, y:-127)
-   
-            Image("search")
-                .frame(width: 44, height: 44)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom:100, trailing: 0))
-                .offset(x:150, y:-80)
-                            
-            Text("Daily Menu").font(.system(size:36,weight: .bold))
-                .offset(x: 0, y:-50)
-            
-            .font(.system(size: 26, weight: .bold))
-            .foregroundColor(.greencolor)
-            .padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
-        }
-            
             VStack{
-                Text("오늘 이 음료 어떠세요.").font(.system(size:24))
-                    .fontWeight(.light)
-                    .foregroundColor(.gray)
-                    .offset(x: 0, y:-100)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                
-                HStack{
-                ACarousel(roles,
-                          id: \.self,
-                          index: $currentIndex,
-                          spacing: spacing,
-                          headspace: headspace,
-                          sidesScaling: sidesScaling,
-                          isWrap: isWrap,
-                          autoScroll: autoScroll ? .active(time) : .inactive) { name in
-                          
-                    Image(name)
-                        .frame(height: 380)
-                        .frame(width:280)
-                        .cornerRadius(30)
-                        .navigationBarTitle("")
-                }
-                Spacer()
-                Spacer()
+                ZStack{
+                    Image("Logo1")
+                        .resizable()
+                        .frame(width: 70, height: 70, alignment: .center)
+                        .offset(x:0, y:-320)
+                                    
+                    Text("Daily Menu").font(.system(size:36,weight: .bold))
+                        .offset(x: 0, y:-240)
+                        .font(.system(size: 26, weight: .bold))
+                        .foregroundColor(.greencolor)
+                    
+                    Text("오늘 이 음료 어떠세요.").font(.system(size:24))
+                        .fontWeight(.light)
+                        .foregroundColor(.gray)
+                        .offset(x: 0, y:-200)
+                    
+                    ZStack{
+                        ACarousel(roles,
+                                  id: \.self,
+                                  index: $currentIndex,
+                                  spacing: spacing,
+                                  headspace: headspace,
+                                  sidesScaling: sidesScaling,
+                                  isWrap: isWrap,
+                                  autoScroll: autoScroll ? .active(time) : .inactive) { name in
+                            Image(name)
+                                .frame(height: 380)
+                                .frame(width:280)
+                                .cornerRadius(30)
+                                .navigationBarTitle("")
+                                .overlay(RoundedRectangle(cornerRadius: 25)
+                                    .stroke(Color.green))
+                                .shadow(color: Color.gray, radius: 5, x: 1, y: 3)
+                            }
+                            Spacer()
+                            Spacer()
+                        }
+                        .offset(x: 0, y:50)
+                    }
+                } // VStack
             }
-            }
-            } // VStack
-        } // VStack
     } // body
 } // struct
         
@@ -97,7 +82,6 @@ struct mainpage: View {
 struct Carousel_Previews: PreviewProvider {
     static var previews: some View {
         mainpage()
-
     }
 }
 

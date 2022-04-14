@@ -9,10 +9,11 @@ import Foundation
 import SwiftUI
 
 struct Detail: View {
-    var id: UUID
+//    var id: UUID
+    var name: String
     var teas: [TeaData]{
         TeaData.sampleData.filter{ (t: TeaData) -> Bool in
-            return self.id == t.id
+            return self.name == t.name
         }
     }
     
@@ -73,6 +74,6 @@ struct Detail: View {
 
 struct Detail_Previews: PreviewProvider {
     static var previews: some View {
-        Detail(id: TeaData.sampleData[0].id)
+        Detail(name: TeaData.sampleData[0].name)
     }
 }
