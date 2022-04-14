@@ -9,18 +9,21 @@ import Foundation
 import SwiftUI
 
 struct Detail: View {
-    var id: UUID
+    var name: String
     var teas: [TeaData]{
         TeaData.sampleData.filter{ (t: TeaData) -> Bool in
-            return self.id == t.id
+            print(name)
+            return self.name == t.name
+            
         }
     }
-    
+   
     var body: some View {
         ScrollView{
             VStack{
                 HStack{
                     VStack{
+                        
 //                        Text("자료 개수\(teas.count)")
                         Text(teas[0].name)
                             .font(.title)
@@ -28,6 +31,9 @@ struct Detail: View {
                         Text("")
                         
                         Text("\(teas[0].name)의 효능")
+                        Button(action: {
+                            print(teas[0].name)
+                        }, label: {Text("test")})
                     }// 차이름, 효능 타이틀
                     VStack{
                         Image(teas[0].picture_code)
@@ -70,9 +76,9 @@ struct Detail: View {
 }
 
 
-
-struct Detail_Previews: PreviewProvider {
-    static var previews: some View {
-        Detail(id: TeaData.sampleData[0].id)
-    }
-}
+//
+//struct Detail_Previews: PreviewProvider {
+//    static var previews: some View {
+//       // Detail(name: TeaData.sampleData[0].name)
+//    }
+//}
