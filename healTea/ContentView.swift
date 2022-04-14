@@ -5,7 +5,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            DonationView()
+            mainpage()
                 .tabItem {
                     Image(systemName: "house")
                          .resizable()
@@ -23,7 +23,7 @@ struct ContentView: View {
                     Image(systemName: "person")
                     Text("My")
                 }
-            DonationList()
+            DonationView()
                 .tabItem {
                     Image(systemName: "globe.americas")
                     Text("Donation")

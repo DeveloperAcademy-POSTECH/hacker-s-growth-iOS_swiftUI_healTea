@@ -171,9 +171,11 @@ struct TeaDictionary: View {
                                        HStack{
                                            Button(action: {
                                                self.showingSheet.toggle()
+                                               print("[TeaDic] \(i)" )
                                            }, label: {Text("+")})
                                            .sheet(isPresented: $showingSheet) {
-                                               Detail(id: i.id)
+                                               let num = i
+                                               Detail(name: num.name)
                                            } // button
                                            Spacer()
                                            Text("Tea")
@@ -207,11 +209,11 @@ struct TeaDictionary: View {
                                        } // HStack
                                        HStack{
                                            Button(action: {
+                                               print("number \(i)" )
                                                self.showingSheet.toggle()
                                            }, label: {Text("+")})
-                                           .sheet(isPresented: $showingSheet) {
-                                              
-                                               Detail(id: i.id)
+                                           .sheet(isPresented: $showingSheet) {      
+                                               Detail(name: i.name)
                                            }// button
                                            Spacer()
                                            Text("Tea")
@@ -237,7 +239,7 @@ struct TeaDictionary: View {
 struct TeaDictionary_Previews: PreviewProvider {
     static var previews: some View {
         TeaDictionary(teaData: TeaData.sampleData)
-        Detail(id: TeaData.sampleData[0].id)
+//        Detail(name: TeaData.sampleData[0].name)
     }
 }
 
