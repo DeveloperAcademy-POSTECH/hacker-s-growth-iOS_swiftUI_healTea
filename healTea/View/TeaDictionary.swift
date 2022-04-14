@@ -1,17 +1,6 @@
 
 import SwiftUI
 
-
-//struct TeaDictionary: View {
-//    @State var teaData: [TeaData]
-//
-//    var body: some View {
-//        HStack {
-//            Text(teaData[0].temperature)
-//        }
-//    }
-//}
-
  
 struct TeaDictionary: View {
 //    typealias btc = (Bool, UUID)
@@ -46,7 +35,7 @@ struct TeaDictionary: View {
                 
             } // inner for
         } // outter for
-        
+        //print("category2 \(middle)")
         return middle
     }
     
@@ -60,19 +49,6 @@ struct TeaDictionary: View {
         return category
     }
     
-    
-//    func deleteFirstValue( arr : [String]) -> [String] {
-//        var copy: [String] = Array<String>()
-//        for i in 0 ..< arr.count {
-//            if i != 0 {
-//                copy.append(arr[i])
-//            }
-//        }
-//        return copy
-//    }
-//    var afterCategory1: [String]{
-//        deleteFirstValue(arr: category1)
-//    }
     
     
     @State var selectedCategory1 = -1
@@ -97,14 +73,12 @@ struct TeaDictionary: View {
                             Picker("대분류",selection: $selectedCategory1) {
                                 ForEach(0 ..< category1.count, id: \.self) { index in
                                     Text(self.category1[index])
-                                        
                                 }
                             }
                     }
                 } // VStack
                 
-
-                
+             
                 if selectedCategory1 > 0 {
 //                    Picker("대분류",selection: $selectedCategory1) {
 //                        ForEach(0 ..< afterCategory1.count, id: \.self) { index in
@@ -137,9 +111,6 @@ struct TeaDictionary: View {
             .padding(.horizontal)
         
             
-//            if selectedCategory1 > 0  {
-//                Text("You selected \(category1[selectedCategory1]) - \(category2[category1[selectedCategory1]]![selectedCategory2])")
-//            }
             
             
             let columns = [
@@ -171,11 +142,10 @@ struct TeaDictionary: View {
                                        HStack{
                                            Button(action: {
                                                self.showingSheet.toggle()
-                                               print("[TeaDic] \(i)" )
+                                               print("[Button action] \(i)" )
                                            }, label: {Text("+")})
                                            .sheet(isPresented: $showingSheet) {
-                                               let num = i
-                                               Detail(name: num.name)
+                                               Detail(name: i.name)
                                            } // button
                                            Spacer()
                                            Text("Tea")
@@ -209,7 +179,7 @@ struct TeaDictionary: View {
                                        } // HStack
                                        HStack{
                                            Button(action: {
-                                               print("number \(i)" )
+                                               print("[Button action] \(i)" )
                                                self.showingSheet.toggle()
                                            }, label: {Text("+")})
                                            .sheet(isPresented: $showingSheet) {      
@@ -234,12 +204,12 @@ struct TeaDictionary: View {
 } // struct
 
 
-                                                 
+
+
 
 struct TeaDictionary_Previews: PreviewProvider {
     static var previews: some View {
         TeaDictionary(teaData: TeaData.sampleData)
-//        Detail(name: TeaData.sampleData[0].name)
     }
 }
 

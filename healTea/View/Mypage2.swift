@@ -9,8 +9,10 @@ import SwiftUI
 import Foundation
 
 struct Mypage2: View {
-    @State var cha: Bool = true
+    @State var character: Bool = true
     @State var modify: Bool = false
+    @State private var myMoney = UserDefaults.standard.integer(forKey: "MyMoney")/100
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -21,10 +23,10 @@ struct Mypage2: View {
                             .frame(width: 140, height: 45)
                         
                         Button(action: {
-                            cha.toggle()
+                            character.toggle()
                             modify.toggle()
                         }, label: {
-                            Text("나의 케릭터")
+                            Text("나의 캐릭터").foregroundColor(.black)
                         })
                         
                         // 나의 캐릭터
@@ -37,10 +39,10 @@ struct Mypage2: View {
                             .frame(width: 140, height: 45)
                         
                         Button(action: {
-                            cha.toggle()
+                            character.toggle()
                             modify.toggle()
                         }, label: {
-                            Text("정보수정")
+                            Text("정보수정").foregroundColor(.black)
                         })
                         
                         // 정보 수정
@@ -59,13 +61,23 @@ struct Mypage2: View {
                         .frame(height: 300)
                     
                     //바뀌는 화면
-                    // 엘리스 시작
+        
                     
                     
-                    
-                    
-                    
-                    
+                    if character {
+                        userInfo()
+                            .frame(width: 350, height: 250, alignment: .center)
+                    } else {
+                        if myMoney > 30 {
+                            Image("bottle1-3")
+                                .resizable()
+                                .frame(width: 200, height: 250, alignment: .center)
+                        } else {
+                            Image("bottle1-2")
+                                .resizable()
+                                .frame(width: 200, height: 250, alignment: .center)
+                        }
+                    }
                     
                     
                     
@@ -125,8 +137,7 @@ struct Mypage2: View {
                 
             }
             .navigationBarTitle("")
-            .navigationBarHidden(true)
-           
+            .navigationBarHidden(true) 
         }
         
     }
