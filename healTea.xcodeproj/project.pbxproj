@@ -41,7 +41,7 @@
 		EE20F2AB280583E1001CA137 /* DonationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20F2AA280583E1001CA137 /* DonationDetail.swift */; };
 		EE2B0578280699870051BE9D /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B0577280699870051BE9D /* DonationView.swift */; };
 		EE8810DB2803FB02002380FB /* Barchart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8810DA2803FB02002380FB /* Barchart.swift */; };
-		EEFE166C2807277B006C7E75 /* ButtonPrac.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFE166B2807277B006C7E75 /* ButtonPrac.swift */; };
+		EEE6DB712807C6C300B3DFB8 /* DonationListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6DB702807C6C300B3DFB8 /* DonationListButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +79,7 @@
 		EE20F2AA280583E1001CA137 /* DonationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDetail.swift; sourceTree = "<group>"; };
 		EE2B0577280699870051BE9D /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		EE8810DA2803FB02002380FB /* Barchart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barchart.swift; sourceTree = "<group>"; };
-		EEFE166B2807277B006C7E75 /* ButtonPrac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPrac.swift; sourceTree = "<group>"; };
+		EEE6DB702807C6C300B3DFB8 /* DonationListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationListButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +170,7 @@
 			children = (
 				EE1692702807049500DD1F72 /* DonationList.swift */,
 				EE2B0577280699870051BE9D /* DonationView.swift */,
-				EEFE166B2807277B006C7E75 /* ButtonPrac.swift */,
+				EEE6DB702807C6C300B3DFB8 /* DonationListButton.swift */,
 				EE20F2AA280583E1001CA137 /* DonationDetail.swift */,
 				39595C8327FF25AB00080515 /* TeaDictionary.swift */,
 				3953B0B42805CAF3000B09AC /* SearchBar.swift */,
@@ -280,7 +280,6 @@
 				EE2B0578280699870051BE9D /* DonationView.swift in Sources */,
 				39595C892800237800080515 /* Mypage.swift in Sources */,
 				B3A9F73D28048CEB00E040B6 /* maininfo.swift in Sources */,
-				EEFE166C2807277B006C7E75 /* ButtonPrac.swift in Sources */,
 				EE20F2AB280583E1001CA137 /* DonationDetail.swift in Sources */,
 				B63013BE2805523B00410CFF /* userInfo.swift in Sources */,
 				EE1692712807049500DD1F72 /* DonationList.swift in Sources */,
@@ -291,6 +290,7 @@
 				39595C4E27FEB80A00080515 /* ContentView.swift in Sources */,
 				39595C8B2800249D00080515 /* Home.swift in Sources */,
 				22ED32232804095C00E61916 /* ACarousel.swift in Sources */,
+				EEE6DB712807C6C300B3DFB8 /* DonationListButton.swift in Sources */,
 				39595C8027FF203F00080515 /* TeaData.swift in Sources */,
 				3953B0B52805CAF3000B09AC /* SearchBar.swift in Sources */,
 				39595C8D2800250F00080515 /* Camera.swift in Sources */,

@@ -12,6 +12,11 @@ struct DonationView: View {
     @State private var selected1 = true
     @State private var selected2 = false
     @State private var selected3 = false
+    @State private var selected_donation = 0
+    
+    private var donations = [["don_0", "그린 피스", "Green Peace"],
+                             ["don_1", "세계 자연 기금", "WWF"],
+                             ["don_2", "환경 재단", "K-Green Foundation"]]
     
     var body: some View {
         NavigationView {
@@ -61,18 +66,18 @@ struct DonationView: View {
             
                         VStack {
                             HStack {
-                                Image("don_0")
+                                Image(donations[selected_donation][0])
                                     .resizable()
                                     .clipShape(Circle())
                                     .frame(width: 60, height: 60)
                                     .shadow(radius: 3)
             
                                 VStack(alignment: .leading) {
-                                    Text("그린피스")
+                                    Text(donations[selected_donation][1])
                                         .fontWeight(.bold)
                                         .foregroundColor(ColorManager.DonationFont)
             
-                                    Text("GREEN PEACE")
+                                    Text(donations[selected_donation][2])
                                         .fontWeight(.light)
                                         .foregroundColor(ColorManager.DonationFont)
                                 }
@@ -82,22 +87,14 @@ struct DonationView: View {
             
                             VStack(alignment: .trailing) {
                                 HStack {
-//                                    Form {
-//                                        Section {
-//                                            TextField("기부할 금액을 입력하세요.", text: $money)
-//                                            .textFieldStyle(.roundedBorder)
-//                                            .modifier(TextFieldClearButton(text: $money))
-//                                            .keyboardType(        )
-//                                                .foregroundColor(ColorManager.DonationFont)
-//
-//                                        }
-//                                    }
                                     ClearButton()
             
                                     Text("원")
                                         .foregroundColor(ColorManager.DonationFont)
+                                    
                                 }
                                 donationButton()
+                                
                             }
                             .padding(.horizontal, 60)
             
@@ -107,7 +104,10 @@ struct DonationView: View {
                     VStack {
                         ZStack {
                             Button(action: {
-                                self.selected1.toggle()  // self는 class에서 자기자신을 가리키는 단어. self.selected라는 것은 이 메서드(?) 내에서 정의된 selected가 toggle 되도록
+                                self.selected1.toggle()
+                                self.selected2 = false
+                                self.selected3 = false
+                                self.selected_donation = 0
                             }) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10).frame(width: 310, height: 100)
@@ -132,7 +132,7 @@ struct DonationView: View {
                     
                                             Spacer()
                     
-                                            Text("2000₩")
+                                            Text("₩ 2000")
                                                 .fontWeight(.light)
                                                 .foregroundColor(selected1 ? Color.white : Color.black)
                                         }
@@ -152,7 +152,10 @@ struct DonationView: View {
                     VStack {
                         ZStack {
                             Button(action: {
-                                self.selected2.toggle()  // self는 class에서 자기자신을 가리키는 단어. self.selected라는 것은 이 메서드(?) 내에서 정의된 selected가 toggle 되도록
+                                self.selected2.toggle()
+                                self.selected3 = false
+                                self.selected1 = false
+                                self.selected_donation = 1
                             }) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10).frame(width: 310, height: 100)
@@ -178,7 +181,7 @@ struct DonationView: View {
                     
                                             Spacer()
                     
-                                            Text("2000₩")
+                                            Text("₩ 2000")
                                                 .fontWeight(.light)
                                                 .foregroundColor(selected2 ? Color.white : Color.black)
                                         }
@@ -198,7 +201,10 @@ struct DonationView: View {
                     VStack {
                         ZStack {
                             Button(action: {
-                                self.selected3.toggle()  // self는 class에서 자기자신을 가리키는 단어. self.selected라는 것은 이 메서드(?) 내에서 정의된 selected가 toggle 되도록
+                                self.selected3.toggle()
+                                self.selected2 = false
+                                self.selected1 = false
+                                self.selected_donation = 2
                             }) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10).frame(width: 310, height: 100)
@@ -224,7 +230,7 @@ struct DonationView: View {
                     
                                             Spacer()
                     
-                                            Text("2000₩")
+                                            Text("₩ 2000")
                                                 .fontWeight(.light)
                                                 .foregroundColor(selected3 ? Color.white : Color.black)
                                         }
