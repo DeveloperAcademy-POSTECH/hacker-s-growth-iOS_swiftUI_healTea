@@ -8,10 +8,13 @@
 import SwiftUI
 import Foundation
 
+
+
 struct Mypage2: View {
     @State var character: Bool = true
     @State var modify: Bool = false
-    @State private var myMoney = UserDefaults.standard.integer(forKey: "MyMoney")/100
+    @AppStorage("MyMoney") private var myMoney = UserDefaults.standard.integer(forKey: "MyMoney")
+    
     
     var body: some View {
         NavigationView{
@@ -25,10 +28,10 @@ struct Mypage2: View {
                         Button(action: {
                             character.toggle()
                             modify.toggle()
+                    
                         }, label: {
                             Text("나의 캐릭터").foregroundColor(.black)
-                        })
-                        
+                        })      
                         // 나의 캐릭터
                     }
                     
@@ -41,6 +44,7 @@ struct Mypage2: View {
                         Button(action: {
                             character.toggle()
                             modify.toggle()
+                           
                         }, label: {
                             Text("정보수정").foregroundColor(.black)
                         })
@@ -68,15 +72,25 @@ struct Mypage2: View {
                         userInfo()
                             .frame(width: 350, height: 250, alignment: .center)
                     } else {
-                        if myMoney > 30 {
+                        if myMoney < 20 {
+                            Image("bottle1-1")
+                                .resizable()
+                                .frame(width: 200, height: 250, alignment: .center)
+                        } else if myMoney < 40 {
+                            Image("bottle1-2")
+                                .resizable()
+                                .frame(width: 200, height: 250, alignment: .center)
+                        } else if myMoney < 60 {
                             Image("bottle1-3")
                                 .resizable()
                                 .frame(width: 200, height: 250, alignment: .center)
                         } else {
-                            Image("bottle1-2")
+                            Image("bottle1-4")
                                 .resizable()
                                 .frame(width: 200, height: 250, alignment: .center)
                         }
+                        Text("Money : \(self.myMoney)")
+                            .foregroundColor(.black)
                     }
                     
                     
