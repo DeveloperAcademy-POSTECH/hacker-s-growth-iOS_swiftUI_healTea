@@ -19,9 +19,9 @@ struct DonationView: View {
                              ["don_1", "세계 자연 기금", "WWF"],
                              ["don_2", "환경 재단", "K-Green Foundation"]]
     
-    @State private var greenPeace = UserDefaults.standard.integer(forKey: "GreenPeace")
-    @State private var wwf = UserDefaults.standard.integer(forKey: "WWF")
-    @State private var kGreen = UserDefaults.standard.integer(forKey: "KGreen")
+    @AppStorage("GreenPeace") private var greenPeace = UserDefaults.standard.integer(forKey: "GreenPeace")
+    @AppStorage("WWF") private var wwf = UserDefaults.standard.integer(forKey: "WWF")
+    @AppStorage("KGreen") private var kGreen = UserDefaults.standard.integer(forKey: "KGreen")
     
     var body: some View {
         NavigationView {

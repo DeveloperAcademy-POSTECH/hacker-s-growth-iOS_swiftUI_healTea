@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct Reward: View {
-    
+
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State var changeImage = false
     @State var openCameraRoll = false
     @State var isCamera = false
     @State var isPhoto = false
     @State var imageSelected = UIImage()
-    @State private var myMoney = UserDefaults.standard.integer(forKey: "MyMoney")
+    @AppStorage("MyMoney") private var myMoney = UserDefaults.standard.integer(forKey: "MyMoney")
     @State private var showAlert = false
     
     var body: some View {
@@ -100,7 +100,9 @@ struct Reward: View {
                     Button("리워드 받기") {
                         if changeImage {
                             self.myMoney += 5
+                            
                             UserDefaults.standard.set(self.myMoney, forKey: "MyMoney")
+
                         } else {
                             showAlert = true
                         }
