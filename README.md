@@ -1,6 +1,6 @@
 # hacker-s-growth-iOS_swiftUI_healTea
 
-![Logo](https://dummyimage.com/1000x300/000/fff.png)
+![Logo](file:///Users/jungin-yoo/Desktop/발표%20자료/logo1.png)
 
 
 # :iphone: Project Title
