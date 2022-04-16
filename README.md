@@ -1,6 +1,6 @@
 # hacker-s-growth-iOS_swiftUI_healTea
 
-![Logo](file:///Users/jungin-yoo/Desktop/발표%20자료/logo1.png)
+![Logo](https://user-images.githubusercontent.com/93065107/163680773-50c507db-333e-4ebd-9c28-f30694a3a49b.png)
 
 
 # :iphone: Project Title
