@@ -1,11 +1,11 @@
 # hacker-s-growth-iOS_swiftUI_healTea
 
-![Logo](https://user-images.githubusercontent.com/93065107/163680773-50c507db-333e-4ebd-9c28-f30694a3a49b.png)
+![Logo](https://user-images.githubusercontent.com/93065107/163680833-fd982845-7456-4675-b0db-58fc2e91908b.png)
 
 
 # :iphone: Project Title
 
-A brief description of what this project does and who it's for
+### HealTea
 
 
 ## :pushpin: Features
